@@ -6,7 +6,7 @@
     "sergeydem <s.demjanenko@artorg.com.ua>"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/sergeydem/wedo_landing",
   "ignore": [
     "**/.*",
     "node_modules",
