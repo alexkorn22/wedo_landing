@@ -1,0 +1,132 @@
+
+/*BEGIN header*/
+
+header {
+  height: 550px;
+  border-bottom: 2px solid #000000;
+  background-color: $bgHead;
+  background-image: url(../img/man.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  .top-line {
+    padding-top: 20px;
+    width: 100%;
+    height: 95px;
+    color: $white;
+    .logo {
+      width: 268px;
+      img {
+        width: 100%;
+      }
+    }
+    .phone {
+      display: flex;
+      justify-content: center;
+      p {
+        padding: 0 10px;
+        font-size: 14px;
+      }
+    }
+    .addres {
+      display: flex;
+      justify-content: flex-end;
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  #menu {
+    height: 360px;
+    ul {
+      text-align: right;
+      li {
+        list-style-type: none;
+        font-size: 28px;
+        line-height: 48px;
+        a {
+          text-decoration: none;
+          color: $white;
+          transition: all 1s;
+          &:hover {
+            color: $orange;
+          }
+        }
+        /*a:after {
+          background: $orange;
+          width: 0px;
+          height: 3px;
+          position: relative;
+          content:"";
+          display: block;
+          transition: all 300ms ease-in-out;
+          top: -3px;
+          z-index: 1;
+        }
+        a:hover:after, a:focus:after {
+          width: 100%;
+        }*/
+      }
+
+    }
+  }
+
+  /*Begin bnt*/
+  .wrap-btn {
+    height: 95px;
+    .button {
+      text-align: center;
+      a {
+        text-decoration: none;
+        border: 4px solid $pink;
+        padding: 14px 18px;
+        font-size: 18px;
+        font-family: $OpenSansSemibold;
+        color: $pink;
+      }
+      [data-wipe] {
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        overflow: hidden;
+        &:before, &:after {
+          content: attr(data-wipe);
+          padding-top: inherit;
+          padding-bottom: inherit;
+          white-space: nowrap;
+          position: absolute;
+          top: 0;
+          overflow: hidden;
+          color: $white;
+          background: $pink;
+        }
+        &:before {
+          left: 0;
+          text-indent: 18px;
+          width: 0;
+        }
+        &:after {
+          padding-left: inherit;
+          padding-right: inherit;
+          left: 100%;
+          text-indent: calc(-100% - 36px);
+          transition: $duration + s $easing;
+        }
+        &:hover {
+          &:before {
+            width: 100%;
+            transition: width $duration + s $easing;
+          }
+          &:after {
+            left: 0;
+            text-indent: 0;
+            transition: 0s $duration + s $easing;
+          }
+        }
+      }
+    }
+  }
+/*End btn*/
+}
+
+/*END header*/

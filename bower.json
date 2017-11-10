@@ -17,5 +17,8 @@
   "dependencies": {
     "normalize.css": "*",
     "jquery": "2.*"
+  },
+  "devDependencies": {
+    "bootstrap": "v4.0.0-alpha.6"
   }
 }
