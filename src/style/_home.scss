@@ -198,6 +198,10 @@ header {
 /*Begin section Development*/
 
 #development {
+  background-image: url(../img/bg-dev.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
   .content {
     margin-top: 50px;
   }
@@ -264,7 +268,7 @@ header {
     }
   }
 
-  /* EFFECTS */
+  /* EFFECTS timeline*/
 
   .timeline ul {
     li {
@@ -296,6 +300,47 @@ header {
       }
     }
   }
+  
+  /* ribbon-phone */
+  .ribbon-phone {
+    height: 1000px;
+    background-image: url(../img/ribbon-phone.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+
+    .ribbon-text {
+      display: flex;
+      justify-content: center;
+      .wrap-thesis {
+        width: 347px;
+        right: 6px;
+        margin-top: 290px;
+        position: relative;
+        background: rgba(0, 0, 0, 0.2);
+        .thesis {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          li {
+            color: $white;
+            font-size: 20px;
+            padding: 8px 20px;
+            &:before {
+              content:  "—";
+              position: relative;
+              left:     -10px;
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+    }
+    .wrap-btn {
+      margin-top: 175px;
+    }
+  }
+  
 }
 
 /*END section Development*/
