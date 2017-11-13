@@ -202,6 +202,8 @@ header {
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 30px 0;
+  padding: 30px 0;
   .content {
     margin-top: 50px;
   }
@@ -344,3 +346,99 @@ header {
 }
 
 /*END section Development*/
+
+
+/*Begin section Integration*/
+
+#integration {
+  margin: 30px 0;
+  padding: 30px 0;
+  .items {
+    height: 250px;
+    &:last-child {
+      height: 100px;
+    }
+    .item {
+      text-align: center;
+      p {
+        font-size: 20px;
+        line-height: 30px;
+        span {
+          color: $pink;
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
+/*Begin section Integration*/
+
+
+/*Begin section advancement*/
+
+#advancement {
+  background-image: url(../img/bg-adv.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 30px 0;
+  padding: 30px 0;
+  .items {
+    height: 300px;
+    .item {
+      display: flex;
+      &:last-child {
+        p:first-child {
+          letter-spacing: 0.6px;
+          top: 31px;
+        }
+      }
+      }
+      p {
+        font-size: 20px;
+        line-height: 27px;
+        &:first-child {
+          transform: rotate(-90deg);
+          font-size: 44px;
+          color: $pink;
+          font-family: $OpenSansExtra-Bold;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          height: 50px;
+          margin: 0;
+          left: 0px;
+          top: 27px;
+          position: absolute;
+      }
+        &:last-child {
+          margin-left: 60px;
+        }
+    }
+  }
+  .wrap-btn {
+    .button {
+      text-align: left;
+      a {
+        padding: 14px 53px;
+      }
+      [data-wipe] {
+        &:before {
+          text-indent: 53px;
+        }
+        &:after {
+          text-indent: calc(-100% - 106px);
+          transition: $duration + s $easing;
+        }
+        &:hover {
+          &:after {
+            text-indent: 0;
+            transition: 0s $duration + s $easing;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*End section advancement*/
