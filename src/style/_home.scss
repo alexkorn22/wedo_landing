@@ -382,8 +382,8 @@ header {
   background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
-  margin: 30px 0;
-  padding: 30px 0;
+ // margin: 30px 0;
+  padding: 60px 0;
   .items {
     height: 300px;
     .item {
@@ -442,3 +442,65 @@ header {
 }
 
 /*End section advancement*/
+
+
+
+/*Begin footer*/
+footer {
+  background-color: $blueDark;
+  color: $white;
+  .items {
+    height: 130px;
+
+    .phone-footer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      p {
+        margin: 0;
+        padding: 0;
+        font-style: italic;
+        font-size: 14px;
+      }
+    }
+    .logo-footer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      a {
+        text-align: center;
+        img {
+          width: 135px;
+        }
+      }
+      p {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 10px;
+        color: $gray;
+      }
+    }
+    .menu-footer {
+      display: flex;
+      justify-content: center;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+          line-height: 21px;
+          a {
+            text-decoration: none;
+            font-size: 14px;
+            color: $white;
+            transition: all 1s;
+            &:hover {
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*End footer*/
