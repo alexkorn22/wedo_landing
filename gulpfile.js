@@ -43,9 +43,9 @@ var config = {
     server: {
         baseDir: "./build"
     },
-    tunnel: true,
+   // tunnel: true,
     host: 'localhost',
-    port: 9000,
+    port: 3001,
     logPrefix: "Frontend_WeDo"
 };
 

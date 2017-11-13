@@ -145,6 +145,22 @@ header {
 
 /*END header*/
 
+
+/*Begin title section*/
+.wrap-title {
+  h2 {
+    margin: 0;
+    line-height: 38px;
+    font-size: 30px;
+  }
+  h2:last-child {
+    font-family: $OpenSansSemibold;
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+/*End title section*/
+
 /*Begin section WeDo*/
 
 #wedo {
@@ -177,3 +193,109 @@ header {
 }
 
 /*End section WeDo*/
+
+
+/*Begin section Development*/
+
+#development {
+  .content {
+    margin-top: 50px;
+  }
+  /* TIMELINE */
+
+  .timeline ul {
+    padding: 0;
+    li {
+      list-style-type: none;
+      position: relative;
+      width: 4px;
+      margin: 0 auto;
+      padding: 45px 0;
+      background: $black;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: inherit;
+      }
+      div {
+        position: relative;
+        bottom: -65px;
+        width: 200px;
+        padding: 15px;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: 0.8px;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 31px;
+          width: 50px;
+          height: 2px;
+          border-top: solid 2px #000;
+        }
+        &:hover {
+          color: $orange;
+          cursor: pointer;
+        }
+      }
+    }
+    li:first-child {
+      padding-top: 0;
+    }
+    li:nth-child(even) div {
+      text-align: left;
+      left: 64px;
+    }
+    li:nth-child(even) div::before {
+      left: -50px;
+    }
+    li:nth-child(odd) div {
+      text-align: right;
+      left: -260px;
+    }
+    li:nth-child(odd) div::before {
+      right: -50px;
+    }
+  }
+
+  /* EFFECTS */
+
+  .timeline ul {
+    li {
+      &::after {
+        transition: background 1s ease-in-out;
+      }
+      &.in-view::after {
+        background: $white;
+        border: 2px solid $black;
+      }
+      &.in-view:hover::after {
+        background: $orange;
+      }
+      & div {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+      }
+      &:nth-child(odd) div {
+        transform: translate3d(-200px, 0, 0);
+      }
+      &:nth-child(even) div {
+        transform: translate3d(200px, 0, 0);
+      }
+      &.in-view div {
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/*END section Development*/
