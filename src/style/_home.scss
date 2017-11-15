@@ -712,3 +712,119 @@ footer {
   }
 }
 /*End footer*/
+
+
+.modal-content {
+  border: none;
+  border-radius: 0;
+  background-image: url(../img/bg-form.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  button {
+    background: transparent;
+    border: none;
+    float: right;
+    margin-top: 12px;
+  }
+  .modal-title {
+    text-align: center;
+  }
+}
+
+/* Container */
+.container1 {
+  position: relative;
+  width: 100%;
+  //margin: 0 auto 100px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  padding: 15px 0 0 0;
+  box-sizing: border-box;
+  transition: .3s ease;
+
+  /* Inputs */
+  .input-container {
+    position: relative;
+    margin: 0 35px 40px;
+
+    input, select {
+      outline: none;
+      z-index: 1;
+      position: relative;
+      background: none;
+      width: 100%;
+      height: 60px;
+      border: 0;
+      color: $black;
+      font-size: 18px;
+      font-family: $OpenSansLight;
+
+      &:focus {
+        ~ label {
+          color: $gray;
+          transform: translate(-12%, -50%) scale(0.75);
+        }
+
+        ~ .bar {
+          &:before,
+          &:after {
+            width: 50%;
+          }
+        }
+      }
+
+      &:valid {
+        ~ label {
+          color: $gray;
+          transform: translate(-12%, -50%) scale(0.75);
+        }
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $black;
+      font-size: 18px;
+      line-height: 60px;
+      @include transition(0.2s ease);
+    }
+
+    .bar {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: $gray;
+      width: 100%;
+      height: 1px;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        background: $pink;
+        width: 0;
+        height: 3px;
+        transition: .2s ease;
+      }
+
+      &:before {
+        left: 50%;
+      }
+
+      &:after {
+        right: 50%;
+      }
+    }
+  }
+  .button-container {
+    .wrap-btn {
+      padding-top: 7px;
+    }
+  }
+}

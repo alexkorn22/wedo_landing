@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 
+//движения фона в шапке
     var currentX = '';
     var currentY = '';
     var movementConstant = .015;
@@ -21,7 +22,7 @@ $( document ).ready(function() {
     });
 
 
-
+//timeline
     (function() {
 
         'use strict';
@@ -58,12 +59,20 @@ $( document ).ready(function() {
 
 
 
-
+//открытие модального окна
     $('#myModal').on('shown.bs.modal', function () {
         // $('#myInput').focus()
     })
 
 
+//форма
 
+    $('.toggle').on('click', function() {
+        $('.container1').stop().addClass('active');
+    });
+
+    $('.close').on('click', function() {
+        $('.container1').stop().removeClass('active');
+    });
 
 });
