@@ -1,5 +1,9 @@
 $( document ).ready(function() {
 
+    $(function() {
+        $('select').selectric();
+    });
+
 //движения фона в шапке
     var currentX = '';
     var currentY = '';
@@ -92,10 +96,10 @@ $( document ).ready(function() {
             url: "mail.php",
             data: $("#callback-form").serialize()
         }).done(function() {
-            alert("Спасибо за заявку!");
+            $('.modal').modal('toggle');
             setTimeout(function() {
-                $.modal.close();
-            }, 1000);
+                alert("Спасибо за заявку!");
+            }, 500);
         });
         return false;
     });

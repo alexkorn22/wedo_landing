@@ -839,3 +839,16 @@ footer {
     }
   }
 }
+
+.number:hover::after{
+  content: "+380661288415";
+  cursor: pointer;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  z-index: 2;
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+}
+

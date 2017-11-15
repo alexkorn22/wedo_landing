@@ -6,7 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,800" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/jquery.selectric.js"></script>
+    <link rel="stylesheet" href="css/main.css">
     <title>WeDo</title>
 </head>
 	<body>
@@ -224,7 +227,7 @@
 						<h3 class="modal-title" id="exampleModalLabel">Укажите, пожалуйста, Ваши контактные данные, и мы предоставим Вам бесплатную консультацию</h3>
 					</div>
 				</div>
-				<div class="row">
+				<div id="hidden-row" class="row">
 					<div class="modal-body">
 						<div class="container1">
 							<div class="card">
@@ -234,7 +237,7 @@
 										<label for="Username">Имя</label>
 										<div class="bar"></div>
 									</div>
-									<div class="input-container">
+									<div class="input-container number">
 										<input class="form-control" type="text" id="Phone" required>
 										<label for="Phone">Телефон</label>
 										<div class="bar"></div>
@@ -260,6 +263,7 @@
 								</form>
 							</div>
 						</div>
+
 					</div>
 				</div>
 
@@ -268,7 +272,6 @@
 		</div>
 	</div>
 	<!-- END Modal -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script>
