@@ -75,4 +75,30 @@ $( document ).ready(function() {
         $('.container1').stop().removeClass('active');
     });
 
+
+//плавый скролл
+    $("#menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
+
+//Аякс отправка форм
+    //Документация: http://api.jquery.com/jquery.ajax/
+    $("#callback-form").submit(function() {
+        $.ajax({
+            type: "GET",
+            url: "mail.php",
+            data: $("#callback-form").serialize()
+        }).done(function() {
+            alert("Спасибо за заявку!");
+            setTimeout(function() {
+                $.modal.close();
+            }, 1000);
+        });
+        return false;
+    });
+
+
 });
