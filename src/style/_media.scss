@@ -54,7 +54,15 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-
+  .selectric-items {
+    .selectric-scroll {
+      ul {
+        li {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }
 
 /* Custom, iPhone Retina */
@@ -79,6 +87,9 @@
   footer .items .item:last-child {
     display: flex;
     justify-content: flex-end;
+  }
+  .modal-dialog {
+    max-width: 590px;
   }
 }
 
