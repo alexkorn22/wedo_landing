@@ -614,6 +614,8 @@ header {
       text-align: center;
       @include media-breakpoint-up(sm){
         text-align: left;
+        display: flex;
+        justify-content: flex-start;
       }
       a {
         padding: 10px 53px;
