@@ -9,7 +9,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="js/jquery.selectric.js"></script>
+    <script src="js/bootstrap-formhelpers.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
+    <!--<link rel="stylesheet" href="css/bootstrap-formhelpers.min.css">-->
     <title>WeDo</title>
 </head>
 	<body>
@@ -49,7 +51,8 @@
 			<div class="row wrap-btn align-items-center justify-content-center">
 				<div class="col-12 col-xl-4">
 					<div class="button">
-						<a href="#" data-toggle="modal" data-target="#myModal" class="btn-pink" data-wipe="Бесплатная консультация">Бесплатная консультация</a>
+						<!--<a href="#" data-toggle="modal" data-target="#myModal" class="btn-pink" data-wipe="Бесплатная консультация">Бесплатная консультация</a>-->
+						<a href="#" class="btn-pink b24-web-form-popup-btn-12" data-wipe="Бесплатная консультация">Бесплатная консультация</a>
 					</div>
 				</div>
 			</div>
@@ -238,7 +241,7 @@
 										<div class="bar"></div>
 									</div>
 									<div class="input-container number">
-										<input class="form-control" type="text" id="Phone" pattern='[\+]\d{2}\d{3}\d{7}' required>
+										<input class="form-control bfh-phone" type="text" id="Phone" data-format="+380 (dd) ddd-dd-dd" required>
 										<label for="Phone">Телефон</label>
 										<div class="bar"></div>
 									</div>
@@ -274,6 +277,19 @@
 	<!-- END Modal -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+	<script id="bx24_form_button" data-skip-moving="true">
+        (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
+                (w[b].forms=w[b].forms||[]).push(arguments[0])};
+            if(w[b]['forms']) return;
+            s=d.createElement('script');r=1*new Date();s.async=1;s.src=u+'?'+r;
+            h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://wedo.bitrix24.ua/bitrix/js/crm/form_loader.js','b24form');
+
+        b24form({"id":"12","lang":"ua","sec":"g50il2","type":"button","click":""});
+	</script>
+
 	<script src="js/main.js"></script>
+	<!--<script src="js/bootstrap-formhelpers.min.js"></script>-->
 	</body>
 </html>

@@ -105,4 +105,11 @@ $( document ).ready(function() {
     });
 
 
+    /*$( "#Phone" ).onfocus(function() {
+        $(this).removeClass("bfh-phone");
+
+    });
+*/
+
+
 });
