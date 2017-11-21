@@ -15,14 +15,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="description" content="Создание интернет-магазина с нуля. Интеграция с 1С и учётными системами. SEO, контекстная реклама, продвижение в социальных сетях. Бесплатная консультация.">
-	<link rel="shortcut icon" href="img/logo_fav.ico" type="image/x-icon">
-	<!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,800&amp;subset=cyrillic" rel="stylesheet">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="js/jquery.selectric.js"></script>
-    <script src="js/bootstrap-formhelpers.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <!--<link rel="stylesheet" href="css/bootstrap-formhelpers.min.css">-->
+    {% if en %}
+		{% set path='../' %}
+	{% else %}
+		{% set path='' %}
+	{% endif %}
+	<link rel="stylesheet" href="{{path}}css/main.css">
+	<script src="{{path}}js/jquery.selectric.js"></script>
+	<script src="{{path}}js/bootstrap-formhelpers.min.js"></script>
+	<link rel="shortcut icon" href="{{path}}img/logo_fav.ico" type="image/x-icon">
 
 </head>
 	<body>
@@ -34,19 +37,23 @@
 			<div class="row top-line align-items-center">
 					<div class="col-5 col-md-3 col-lg-4 col-xl-4 item">
 						<div class="logo">
-							<a href=""><img src="img/logoWedo.png" alt="WeDo"></a>
+							<a href=""><img src="{{path}}img/logoWedo.png" alt="WeDo"></a>
 						</div>
 					</div>
 					<div class="col-7 col-md-5 col-lg-4 col-xl-4 item">
 						<div class="phone">
 							<p class="hidden-sm-down">+38(097)564-68-71</p>
 							<p> +38(050)687-75-11</p>
-							<p class="hidden-sm-up">г.Запорожье, ул. Рекордная 26Г</p>
+							<p class="hidden-sm-up">{{address}}</p>
 						</div>
 					</div>
 					<div class="col-9 col-md-4 col-lg-4 col-xl-4 item">
 						<div class="addres">
-							<p class="hidden-sm-down">г.Запорожье, ул. Рекордная 26Г</p>
+							<p class="hidden-sm-down">{{address}}</p>
+						</div>
+						<div class="collapse-lang">
+							<div onclick="changePath('/')"><p>RU</p></div>
+							<div onclick="changePath('/en')"><p>EN</p></div>
 						</div>
 					</div>
 				</div>
@@ -207,7 +214,7 @@
 				</div>
 				<div class="col-12 col-md-4 col-xl-6 item">
 					<div class="logo-footer">
-						<a href=""><img src="img/logoWedo.png" alt="WeDo"></a>
+						<a href=""><img src="{{path}}img/logoWedo.png" alt="WeDo"></a>
 						<p>© Copyright 2017, Все права защищены</p>
 					</div>
 				</div>
@@ -232,7 +239,7 @@
 				<div class="row justify-content-end">
 					<div class="col-2 justify-content-end">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<img src="img/close.png" alt="">
+							<img src="{{path}}img/close.png" alt="">
 						</button>
 					</div>
 				</div>
@@ -283,9 +290,22 @@
 		</div>
 	</div>
 	<!-- END Modal -->
+	<script>
+        var oldUrl = window.location.pathname;
+        var path = oldUrl.split('/');
+
+        function changePath(local) {
+            if (!!~['en'].indexOf(path[1])) {
+                window.location.href = local=="/en" ? oldUrl: "/";
+            }
+            else {
+                window.location.href = local=="/" ? oldUrl: local + oldUrl;
+            }
+        }
+	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-	<script src="js/main.js"></script>
+	<script src="{{path}}js/main.js"></script>
 	<!--<script src="js/bootstrap-formhelpers.min.js"></script>-->
 	</body>
 </html>

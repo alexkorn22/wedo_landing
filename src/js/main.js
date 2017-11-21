@@ -90,7 +90,7 @@ $( document ).ready(function() {
 
 //Аякс отправка форм
     //Документация: http://api.jquery.com/jquery.ajax/
-    $("#callback-form").submit(function() {
+   /* $("#callback-form").submit(function() {
         $.ajax({
             type: "GET",
             url: "mail.php",
@@ -102,7 +102,7 @@ $( document ).ready(function() {
             }, 500);
         });
         return false;
-    });
+    });*/
 
 
     /*$( "#Phone" ).onfocus(function() {
@@ -113,6 +113,12 @@ $( document ).ready(function() {
 
 
     //форма битрикса
+    var oldUrl = window.location.pathname;
+    var path = oldUrl.split('/');
+    var lang = 'en';
+    if (!(!!~['en'].indexOf(path[1]))) {
+        var lang = 'ru';
+    }
 
         (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
                 (w[b].forms=w[b].forms||[]).push(arguments[0])};
@@ -121,8 +127,7 @@ $( document ).ready(function() {
             h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
         })(window,document,'https://wedo.bitrix24.ua/bitrix/js/crm/form_loader.js','b24form');
 
-    b24form({"id":"12","lang":"ru","sec":"g50il2","type":"button","click":""});
-
+    b24form({"id":"12","lang":lang,"sec":"g50il2","type":"button","click":""});
 
 
 

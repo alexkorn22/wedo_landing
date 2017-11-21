@@ -12,6 +12,9 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
+    nunjucks = require('gulp-nunjucks-html'),
+    htmlmin = require('gulp-htmlmin'),
+    data = require('gulp-data'),
     reload = browserSync.reload;
 
 var path = {
@@ -55,6 +58,27 @@ gulp.task('webserver', function () {
 
 gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
+});
+
+gulp.task('html:generate-ru', function () {
+    return gulp.src("./src/index.html")
+        .pipe(data(function() {
+            return require("./templates/ru.json")
+        }))
+        .pipe(nunjucks({searchPaths: ["html"], ext: ".html"}))
+        .pipe(htmlmin({collapseWhitespace: true, minifyCSS: true, minifyJS: true}))
+        .pipe(gulp.dest("./build/"));
+});
+
+
+gulp.task('html:generate-en', function () {
+    return gulp.src("./src/index.html")
+        .pipe(data(function() {
+            return require("./templates/en.json")
+        }))
+        .pipe(nunjucks({searchPaths: ["html"], ext: ".html"}))
+        .pipe(htmlmin({collapseWhitespace: true, minifyCSS: true, minifyJS: true}))
+        .pipe(gulp.dest("./build/en"));
 });
 
 gulp.task('html:build', function () {
@@ -110,7 +134,8 @@ gulp.task('fonts:build', function() {
 });
 
 gulp.task('build', [
-    'html:build',
+    'html:generate-ru',
+    'html:generate-en',
     'js:build',
     'style:build',
     'fonts:build',
@@ -120,7 +145,7 @@ gulp.task('build', [
 
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
-        gulp.start('html:build');
+        gulp.start(['html:generate-ru','html:generate-en']);
     });
     watch([path.watch.style], function(event, cb) {
         gulp.start('style:build');
