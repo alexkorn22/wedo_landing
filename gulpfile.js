@@ -134,6 +134,7 @@ gulp.task('fonts:build', function() {
 });
 
 gulp.task('build', [
+    'html:build',
     'html:generate-ru',
     'html:generate-en',
     'js:build',
@@ -145,7 +146,7 @@ gulp.task('build', [
 
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
-        gulp.start(['html:generate-ru','html:generate-en']);
+        gulp.start(['html:build','html:generate-ru','html:generate-en']);
     });
     watch([path.watch.style], function(event, cb) {
         gulp.start('style:build');
