@@ -93,6 +93,16 @@ header {
           font-size: 14px;
         }
       }
+      .collapse-lang {
+        display: flex;
+        p {color: $pink;}
+        .ru {
+          margin: 0 5px 0 15px;
+        }
+        .ru p,.en p:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 
