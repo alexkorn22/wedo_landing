@@ -15,6 +15,7 @@ var gulp = require('gulp'),
     nunjucks = require('gulp-nunjucks-html'),
     htmlmin = require('gulp-htmlmin'),
     data = require('gulp-data'),
+    rimrafGulp = require('gulp-rimraf'),
     reload = browserSync.reload;
 
 var path = {
@@ -60,7 +61,13 @@ gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
 });
 
+gulp.task('pre-clean', function() {
+    return gulp.src('./build', { read: false })
+        .pipe(rimrafGulp());
+});
+
 gulp.task('html:generate-ru', function () {
+    delete require.cache[require.resolve('./templates/ru.json')];
     return gulp.src("./src/index.html")
         .pipe(data(function() {
             return require("./templates/ru.json")
@@ -72,6 +79,7 @@ gulp.task('html:generate-ru', function () {
 
 
 gulp.task('html:generate-en', function () {
+    delete require.cache[require.resolve('./templates/en.json')];
     return gulp.src("./src/index.html")
         .pipe(data(function() {
             return require("./templates/en.json")
