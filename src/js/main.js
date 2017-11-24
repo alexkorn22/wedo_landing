@@ -90,9 +90,9 @@ $( document ).ready(function() {
 
 //Аякс отправка форм
     //Документация: http://api.jquery.com/jquery.ajax/
-   /* $("#callback-form").submit(function() {
+    $("#callback-form").submit(function() {
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: "mail.php",
             data: $("#callback-form").serialize()
         }).done(function() {
@@ -102,14 +102,13 @@ $( document ).ready(function() {
             }, 500);
         });
         return false;
-    });*/
+    });
 
 
-    /*$( "#Phone" ).onfocus(function() {
+   /* $( "#Phone" ).onfocus(function() {
         $(this).removeClass("bfh-phone");
 
-    });
-*/
+    });*/
 
 
     //форма битрикса
@@ -117,8 +116,7 @@ $( document ).ready(function() {
     var path = oldUrl.split('/');
     var lang = 'en';
     if (!(!!~['en'].indexOf(path[1]))) {
-        var lang = 'ru';
-    }
+        // var lang = 'ru';
 
         (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
                 (w[b].forms=w[b].forms||[]).push(arguments[0])};
@@ -127,7 +125,25 @@ $( document ).ready(function() {
             h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
         })(window,document,'https://wedo.bitrix24.ua/bitrix/js/crm/form_loader.js','b24form');
 
-    b24form({"id":"12","lang":lang,"sec":"g50il2","type":"button","click":""});
+        b24form({"id":"12","lang":"ru","sec":"g50il2","type":"button","click":""});
+
+    }
+    else {
+        (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
+                (w[b].forms=w[b].forms||[]).push(arguments[0])};
+            if(w[b]['forms']) return;
+            s=d.createElement('script');r=1*new Date();s.async=1;s.src=u+'?'+r;
+            h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://wedo.bitrix24.ua/bitrix/js/crm/form_loader.js','b24form');
+
+        b24form({"id":"6","lang":"en","sec":"1yigw2","type":"button","click":""});
+    }
+
+
+
+
+
+
 
 
 
