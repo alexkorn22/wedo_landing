@@ -180,6 +180,7 @@ header {
       padding: 10px 15px;
       font-size: 14px;
       border-radius: 0;
+      outline: none;
       @include media-breakpoint-up(sm){
         font-size: 18px;
         padding: 14px 18px;
@@ -771,6 +772,7 @@ footer {
     border: none;
     float: right;
     margin-top: 12px;
+    outline: none;
   }
   .modal-title {
     text-align: center;
@@ -782,6 +784,30 @@ footer {
     }
   }
 }
+
+#myModal2 {
+  .modal-content {
+    min-height: auto;
+    .modal-body {
+      p {
+        text-align: center;
+        font-size: 20px;
+      }
+    }
+    .modal-footer {
+      border: none;
+      justify-content: center;
+      .wrap-btn {
+        height: auto;
+      }
+    }
+  }
+}
+
+.modal-open {
+  padding-right: 0px !important;
+}
+
 
 /* Container */
 .container1 {
@@ -897,4 +923,22 @@ footer {
   background-color: $blueDark;
   padding: 5px 10px;
 }
+
+/*.wrap-alert {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  #alert {
+    width: 350px;
+    height: 180px;
+    position: absolute;
+    background-color: $white;
+    z-index: 10;
+    top: 20%;
+    display: none;
+    text-align: center;
+    padding: 25px 10px 15px 10px;
+  }
+}*/
+
 

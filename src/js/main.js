@@ -106,12 +106,24 @@ $( document ).ready(function() {
         }).done(function() {
             $('.modal').modal('toggle');
             setTimeout(function() {
-                alert(message);
-            }, 500);
+                //alert(message);
+                // $('#alert').css("display", "block");
+               // $("#myModal2").css("display", "block").addClass('show');
+                $('#myModal2').fadeIn();
+            }, 700);
         });
         return false;
     });
 
+
+
+    $('#open-close').show();
+    $('.wrap-alert').show();
+
+    $('#open-close').click(function(event) {
+        event.preventDefault(); // Для того чтобы при нажатии на ссылку не кидало вверх
+        $('.wrap-alert').slideToggle();
+    });
 
 
 

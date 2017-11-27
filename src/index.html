@@ -294,7 +294,33 @@
 			</div>
 		</div>
 	</div>
+    <!--<div class="wrap-alert">
+        <div class="alert-div" id="alert">
+            <p>{{alert}}</p>
+            <div class="wrap-btn">
+                <div class="button">
+                    <a href="#" id="open-close" class="btn-pink" data-wipe="{{btn5}}">{{btn5}}</a>
+                </div>
+            </div>
+        </div>
+    </div>-->
 	<!-- END Modal -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>{{alert}}</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="wrap-btn">
+                        <div class="button">
+                            <a href="#" data-dismiss="modal" class="btn-pink" data-wipe="{{btn5}}">{{btn5}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<script>
         var oldUrl = window.location.pathname;
         var path = oldUrl.split('/');
