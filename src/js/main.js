@@ -28,12 +28,9 @@ $( document ).ready(function() {
 
 //timeline
     (function() {
-
         'use strict';
-
         // define variables
         var items = document.querySelectorAll(".timeline li");
-
         // check if an element is in viewport
         // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
         function isElementInViewport(el) {
@@ -70,14 +67,14 @@ $( document ).ready(function() {
 
 
 //форма
-
-    $('.toggle').on('click', function() {
-        $('.container1').stop().addClass('active');
-    });
-
-    $('.close').on('click', function() {
-        $('.container1').stop().removeClass('active');
-    });
+//
+//     $('.toggle').on('click', function() {
+//         $('.container1').stop().addClass('active');
+//     });
+//
+//     $('.close').on('click', function() {
+//         $('.container1').stop().removeClass('active');
+//     });
 
 
 //плавый скролл
@@ -99,19 +96,28 @@ $( document ).ready(function() {
 
     //Документация: http://api.jquery.com/jquery.ajax/
     $("#callback-form").submit(function() {
-        $.ajax({
-            type: "POST",
-            url: "mail.php",
-            data: $("#callback-form").serialize()
-        }).done(function() {
-            $('.modal').modal('toggle');
-            setTimeout(function() {
-                //alert(message);
-                // $('#alert').css("display", "block");
-               // $("#myModal2").css("display", "block").addClass('show');
-                $('#myModal2').fadeIn();
-            }, 700);
-        });
+        var str =   $("#Phone").val();
+        var found = str.match(/(?:\w)(?:(?:(?:(?:\+?3)?8\W{0,5})?0\W{0,5})?[34569]\s?\d[^\w,;(\+]{0,5})?\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d(?!(\W?\d))/)
+
+        if (found !== null) {
+            $.ajax({
+                type: "POST",
+                url: "mail.php",
+                data: $("#callback-form").serialize()
+            }).done(function() {
+                $('.modal').modal('toggle');
+                setTimeout(function() {
+                    //alert(message);
+                    // $('#alert').css("display", "block");
+                   // $("#myModal2").css("display", "block").addClass('show');
+                    $('#myModal2').fadeIn();
+                }, 700);
+            });
+        }
+        else {
+            $('#errorMessage').css("display","block");
+        }
+
         return false;
     });
 
@@ -125,6 +131,8 @@ $( document ).ready(function() {
         $('.wrap-alert').slideToggle();
     });
 
+
+    //Регулярные выражения на проверку телефона
 
 
     /* $( "#Phone" ).onfocus(function() {
