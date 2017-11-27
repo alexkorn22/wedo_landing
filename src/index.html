@@ -48,7 +48,7 @@
 							</div>
 							<p class="hidden-sm-down">+38(097)564-68-71</p>
 							<p> +38(050)687-75-11</p>
-							<p class="hidden-sm-up">{{address}}</p>
+							<p class="hidden-md-up">{{address}}</p>
 						</div>
 					</div>
 					<div class="col-9 col-md-3 col-lg-4 col-xl-4 item">
@@ -73,7 +73,7 @@
 			<div class="row wrap-btn align-items-center justify-content-center">
 				<div class="col-12 col-xl-4">
 					<div class="button">
-						<a href="#" data-toggle="modal" data-target="#myModal" class="btn-pink" data-wipe="Бесплатная консультация">Бесплатная консультация</a>
+						<a href="#" data-toggle="modal" data-target="#myModal" class="btn-pink" data-wipe="{{btn1}}">{{btn1}}</a>
 						<!--<a href="#" class="btn-pink b24-web-form-popup-btn-12 b24-web-form-popup-btn-6" data-wipe="{{btn1}}">{{btn1}}</a>-->
 					</div>
 				</div>
@@ -96,7 +96,7 @@
 			<div class="row wrap-btn align-items-center justify-content-center">
 				<div class="col-12 col-xl-4">
 					<div class="button">
-						<a href="#wedo" class="btn-pink b24-web-form-popup-btn-12" data-wipe="{{btn1}}">{{btn1}}</a>
+						<a href="#" data-toggle="modal" data-target="#myModal" class="btn-pink" data-wipe="{{btn1}}">{{btn1}}</a>
 					</div>
 				</div>
 			</div>
@@ -139,7 +139,7 @@
 						</div>
 						<div class="wrap-btn">
 							<div class="button">
-								<a href="#development" class="btn-pink b24-web-form-popup-btn-12" data-wipe="{{btn2}}">{{btn2}}</a>
+								<a href="#" data-toggle="modal" data-target="#myModal" class="btn-pink" data-wipe="{{btn2}}">{{btn2}}</a>
 							</div>
 						</div>
 					</div>
@@ -186,7 +186,7 @@
 				<div class="col-12 col-md-6 col-xl-11 align-self-center item hidden-sm-down">
 					<div class="wrap-btn">
 						<div class="button">
-							<a href="#advancement" class="btn-pink b24-web-form-popup-btn-12" data-wipe="{{btn3}}">{{btn3}}</a>
+							<a href="#" data-toggle="modal" data-target="#myModal" class="btn-pink" data-wipe="{{btn3}}">{{btn3}}</a>
 						</div>
 					</div>
 				</div>
@@ -199,7 +199,7 @@
 				<div class="col-12 col-xl-11">
 					<div class="wrap-btn">
 						<div class="button">
-							<a href="#advancement" class="btn-pink b24-web-form-popup-btn-12" data-wipe="{{btn3}}">{{btn3}}</a>
+							<a href="#" data-toggle="modal" data-target="#myModal" class="btn-pink" data-wipe="{{btn3}}">{{btn3}}</a>
 						</div>
 					</div>
 				</div>
@@ -250,7 +250,7 @@
 				</div>
 				<div class="row justify-content-center">
 					<div class="col-10">
-						<h3 class="modal-title" id="exampleModalLabel">Укажите, пожалуйста, Ваши контактные данные, и мы предоставим Вам бесплатную консультацию</h3>
+						<h3 class="modal-title" id="exampleModalLabel">{{form_title}}</h3>
 					</div>
 				</div>
 				<div id="hidden-row" class="row">
@@ -259,28 +259,28 @@
 							<div class="card">
 								<form id="callback-form">
 									<div class="input-container">
-										<input type="text" id="Username" required>
-										<label for="Username">Имя</label>
+										<input type="text" id="Username" name="Username" required>
+										<label for="Username">{{input_name}}</label>
 										<div class="bar"></div>
 									</div>
 									<div class="input-container number">
-										<input class="form-control bfh-phone" type="text" id="Phone" data-format="+380 (dd) ddd-dd-dd" required>
-										<label for="Phone">Телефон</label>
+										<input class="form-control bfh-phone" type="text" id="Phone" value="" name="Phone" data-format="+380 (dd) ddd-dd-dd" required>
+										<label for="Phone">{{input_phone}}</label>
 										<div class="bar"></div>
 									</div>
 									<div class="input-container">
-										<select class="form-control" id="select">
-											<option value="" disabled selected>Вам требуется</option>
-											<option value="1">Разработка интернет-магазина</option>
-											<option value="2">Интеграция с учётными системами</option>
-											<option value="3">Продвижение интернет-магазина</option>
+										<select class="form-control" id="select" name="select" required>
+											<option value="" disabled selected>{{select_title}}</option>
+											<option value="{{select_item1}}">{{select_item1}}</option>
+											<option value="{{select_item2}}">{{select_item2}}</option>
+											<option value="{{select_item3}}">{{select_item3}}</option>
 										</select>
 										<div class="bar"></div>
 									</div>
 									<div class="button-container">
 										<div class="wrap-btn">
 											<div class="button">
-												<button type="submit" class="btn" data-wipe="Отправить заявку">Отправить заявку</button>
+												<button type="submit" class="btn" data-wipe="{{btn4}}">{{btn4}}</button>
 												<!--<a href="" id="submit-btn" class="btn-pink" data-wipe="Отправить заявку">Отправить заявку</a>-->
 											</div>
 										</div>
