@@ -50,5 +50,6 @@
   "select_item1": "Development of online stores",
   "select_item2": "Integration with accounting systems",
   "select_item3": "Promotion of online stores",
-  "alert": "Thank you! We will contact you to discuss the project."
+  "alert": "Thank you! We will contact you to discuss the project.",
+  "error_mes": "Specify your phone. (see the hint)"
 }

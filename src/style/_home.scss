@@ -825,6 +825,14 @@ footer {
   background: transparent;
   border: none;
 
+  #errorMessage {
+    top: 175px;
+    position: absolute;
+    left: 35px;
+    font-size: 12px;
+    color: #ff0000;
+  }
+
   /* Inputs */
   .input-container {
     position: relative;
@@ -913,7 +921,7 @@ footer {
 }
 
 .number:hover::after{
-  content: "+380(11)111-11-11";
+  content: "+380(67)111-22-33";
   cursor: pointer;
   position: absolute;
   top: 63px;

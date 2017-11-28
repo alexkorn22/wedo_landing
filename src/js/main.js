@@ -87,12 +87,12 @@ $( document ).ready(function() {
 
 //Аякс отправка форм
 
-    var oldUrl = window.location.pathname;
+    /*var oldUrl = window.location.pathname;
     var path = oldUrl.split('/');
     var message = "Спасибо! Наш специалист свяжется с вами в ближайшее время.";
         if (!!~['en'].indexOf(path[1])) {
            message = "Thank you! We will contact you to discuss the project";
-        }
+        }*/
 
     //Документация: http://api.jquery.com/jquery.ajax/
     $("#callback-form").submit(function() {
@@ -117,7 +117,6 @@ $( document ).ready(function() {
         else {
             $('#errorMessage').css("display","block");
         }
-
         return false;
     });
 
@@ -169,13 +168,6 @@ $( document ).ready(function() {
         b24form({"id":"6","lang":"en","sec":"1yigw2","type":"button","click":""});
     }
 */
-
-
-
-
-
-
-
 
 
 });
