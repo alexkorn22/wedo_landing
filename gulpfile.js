@@ -49,7 +49,7 @@ var config = {
     },
    // tunnel: true,
     host: 'localhost',
-    port: 3001,
+    port: 9000,
     logPrefix: "Frontend_WeDo"
 };
 
