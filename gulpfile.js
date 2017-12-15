@@ -68,7 +68,7 @@ gulp.task('pre-clean', function() {
 
 gulp.task('html:generate-ru', function () {
     delete require.cache[require.resolve('./templates/ru.json')];
-    return gulp.src("./src/index.html")
+    return gulp.src("./src/*.html")
         .pipe(data(function() {
             return require("./templates/ru.json")
         }))
@@ -80,7 +80,7 @@ gulp.task('html:generate-ru', function () {
 
 gulp.task('html:generate-en', function () {
     delete require.cache[require.resolve('./templates/en.json')];
-    return gulp.src("./src/index.html")
+    return gulp.src("./src/*.html")
         .pipe(data(function() {
             return require("./templates/en.json")
         }))
