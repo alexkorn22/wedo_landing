@@ -12,8 +12,8 @@ class Telegram {
     protected $api = "https://api.telegram.org/bot";
     protected $idChat;
 
-    public function __construct($idChat = ''){
-        $this->token = '277180941:AAEFGARnTdQGA-GILcyErqm5NImIFQcqRVs';
+    public function __construct($idChat = '-273748238'){
+        $this->token = '482639937:AAG9_aTPp05xQ5NTilu0PIG4TtFjaBjTuLA';
         $this->api .= $this->token;
         $this->idChat = $idChat;
     }
