@@ -280,6 +280,12 @@ header {
   h2:last-child {
     font-family: $OpenSansSemibold;
   }
+  p {
+    font-size: 32px;
+    line-height: 40px;
+    font-family: $OpenSansSemibold;
+    margin: 0;
+  }
 }
 /*End title section*/
 

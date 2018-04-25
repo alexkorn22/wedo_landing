@@ -7,6 +7,7 @@
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+  margin-bottom: 170px;
 
   .head-content {
     display: flex;
@@ -70,4 +71,80 @@
       margin-bottom: 15px;
     }
   }
+}
+
+.whom-kr {
+  margin-bottom: 170px;
+
+  .wrap-title {
+    text-align: center;
+  }
+
+  .items {
+    margin-top: 60px;
+    .item {
+      display: flex;
+      align-items: center;
+      padding-bottom: 30px;
+      .icon {
+        max-width: 50px;
+        margin-right: 15px;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .text {
+        font-size: 20px;
+        line-height: 28px;
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.advantage-kr {
+  margin-bottom: 170px;
+
+  .wrap-title p {
+    font-family: $OpenSansRegular;
+  }
+
+  .items {
+    margin-top: 70px;
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .icon {
+        width: auto;
+        height: 80px;
+        img {
+          width: 100%;
+        }
+      }
+      hr {
+        height: 4px;
+        width: 100px;
+        background-color: #3cc47c;
+        border: 0;
+      }
+      .text {
+        p {
+          margin: 0;
+          text-align: center;
+          font-size: 18px;
+          line-height: 28px;
+          padding: 0 35px;
+        }
+      }
+    }
+  }
+
+
 }
