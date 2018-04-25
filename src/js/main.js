@@ -1,5 +1,31 @@
 $( document ).ready(function() {
 
+    $('.slider-work').owlCarousel({
+        loop:true, //Зацикливаем слайдер
+        margin:50, //Отступ от картино если выводите больше 1
+        autoplay:false, //Автозапуск слайдера
+        smartSpeed:2000, //Время движения слайда
+        autoplayTimeout:7000, //Время смены слайда
+        dots: false,
+        nav: true,
+        navText: ["<img src='../img/Arrows-Back-icon.png'>","<img src='../img/Arrows-Back-icon.png'>"],
+        responsive:{ //Адаптация в зависимости от разрешения экрана
+            0:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            600:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            1000:{
+                items:1
+            }
+        }
+    });
+
     $(function() {
         $('select').selectric();
     });
@@ -66,16 +92,6 @@ $( document ).ready(function() {
     });
 
 
-//форма
-//
-//     $('.toggle').on('click', function() {
-//         $('.container1').stop().addClass('active');
-//     });
-//
-//     $('.close').on('click', function() {
-//         $('.container1').stop().removeClass('active');
-//     });
-
 
 //плавый скролл
     $("#menu").on("click","a", function (event) {
@@ -86,14 +102,6 @@ $( document ).ready(function() {
     });
 
 //Аякс отправка форм
-
-    /*var oldUrl = window.location.pathname;
-    var path = oldUrl.split('/');
-    var message = "Спасибо! Наш специалист свяжется с вами в ближайшее время.";
-        if (!!~['en'].indexOf(path[1])) {
-           message = "Thank you! We will contact you to discuss the project";
-        }*/
-
     //Документация: http://api.jquery.com/jquery.ajax/
     $("#callback-form").submit(function() {
         var str =   $("#Phone").val();
@@ -132,42 +140,9 @@ $( document ).ready(function() {
 
 
     //Регулярные выражения на проверку телефона
-
-
     /* $( "#Phone" ).onfocus(function() {
          $(this).removeClass("bfh-phone");
 
      });*/
-
-
-    //форма битрикса
-   /* var oldUrl = window.location.pathname;
-    var path = oldUrl.split('/');
-    var lang = 'en';
-    if (!(!!~['en'].indexOf(path[1]))) {
-        // var lang = 'ru';
-
-        (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
-                (w[b].forms=w[b].forms||[]).push(arguments[0])};
-            if(w[b]['forms']) return;
-            s=d.createElement('script');r=1*new Date();s.async=1;s.src=u+'?'+r;
-            h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://wedo.bitrix24.ua/bitrix/js/crm/form_loader.js','b24form');
-
-        b24form({"id":"12","lang":"ru","sec":"g50il2","type":"button","click":""});
-
-    }
-    else {
-        (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
-                (w[b].forms=w[b].forms||[]).push(arguments[0])};
-            if(w[b]['forms']) return;
-            s=d.createElement('script');r=1*new Date();s.async=1;s.src=u+'?'+r;
-            h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://wedo.bitrix24.ua/bitrix/js/crm/form_loader.js','b24form');
-
-        b24form({"id":"6","lang":"en","sec":"1yigw2","type":"button","click":""});
-    }
-*/
-
 
 });
