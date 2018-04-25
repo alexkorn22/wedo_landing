@@ -151,9 +151,8 @@
 .result-kr {
   margin-bottom: 170px;
 
-
   .slider-work {
-    padding-top: 50px;
+    margin-top: 70px;
     @include media-breakpoint-down(sm){
       padding-top: 25px;
     }
@@ -233,8 +232,6 @@
     }
   }
 
-
-
   //owl dot
   .owl-dot {
     background: $white;
@@ -268,7 +265,6 @@
       height: 20px;
     }
   }
-
   .owl-next {
     right: -40px;
 
@@ -276,11 +272,15 @@
       transform: rotate(180deg);
     }
   }
-
   .owl-prev {
     left: -40px;
   }
 
+}
+
+
+.price-table-kr {
+  margin-bottom: 170px;
 
 
 }
