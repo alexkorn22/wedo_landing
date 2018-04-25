@@ -153,6 +153,7 @@
 
   .slider-work {
     margin-top: 70px;
+    margin-bottom: 30px;
     @include media-breakpoint-down(sm){
       padding-top: 25px;
     }
@@ -282,5 +283,43 @@
 .price-table-kr {
   margin-bottom: 170px;
 
+  .custom-table {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: 2px solid transparent;
+    thead th {
+      border-bottom: 3px solid $green;
+    }
+    &.table-hover-custom tbody tr:hover {
+      background-color: rgba($blueDark,.025);
+    }
 
+    .t-col1 {
+      width: 40%;
+      &.title {
+        font-size: 24px;
+      }
+      .small-italic {
+        font-style: italic;
+        font-size: 14px;
+      }
+      img {
+        margin-right: 10px;
+        width: 30px;
+      }
+    }
+    .t-col2, .t-col3 {
+      width: 30%;
+      &.title {
+        font-size: 24px;
+        font-family: $OpenSansSemibold;
+      }
+      a {
+        text-decoration: none;
+        color: $green;
+        font-family: $OpenSansSemibold;
+      }
+    }
+  }
 }
