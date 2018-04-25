@@ -326,13 +326,12 @@
 
 
 .stages-kr {
-  margin-bottom: 170px;
 
   #custom-accordion-kr {
     margin-top: 70px;
     margin-bottom: 30px;
     display: flex;
-    min-height: 500px;
+    min-height: 380px;
     width: 100%;
     justify-content: space-between;
     position: relative;
@@ -397,6 +396,64 @@
       top: 35px;
       border-top: 2px dotted $gray;
       z-index: 0;
+    }
+  }
+}
+
+
+.footer-kr {
+  background-color: $blueDark;
+  color: $white;
+  .items {
+    height: 250px;
+    @include media-breakpoint-up(sm) {
+      height: 250px;
+    }
+    .item {
+      &:last-child {
+        order: -1;
+        //margin: 30px 0;
+        display: flex;
+        justify-content: flex-start;
+        @include media-breakpoint-up(sm) {
+          order: 1;
+        }
+      }}
+    .logo-footer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      a {
+        text-align: center;
+        img {
+          width: 135px;
+        }
+      }
+      p {
+        text-align: center;
+        margin: 0;
+        @include media-breakpoint-between(sm, md){
+          font-size: 10px;
+          margin-top: 0;
+        }
+        @include media-breakpoint-down(sm){
+          padding-top: 10px;
+        }
+        font-size: 12px;
+        color: $gray;
+      }
+      .footer-phone {
+        display: flex;
+        justify-content: center;
+        a {
+          margin: 15px 0;
+          color: $white;
+          padding: 0 10px;
+          text-decoration: none;
+          font-size: 14px;
+        }
+
+      }
     }
   }
 }
