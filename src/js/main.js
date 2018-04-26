@@ -1,5 +1,21 @@
 $( document ).ready(function() {
 
+//таблица тарифов в контекстной рекламе
+    $(".btn-tariff.btn-tariff-one").click(function () {
+         $(".custom-table .t-col3").css("display","none");
+         $(".custom-table .t-col2").css("display","table-cell");
+            $(".btn-tariff.btn-tariff-one").addClass("btn-tariff_active");
+            $(".btn-tariff.btn-tariff-two").removeClass("btn-tariff_active");
+
+    });
+    $(".btn-tariff.btn-tariff-two").click(function () {
+        $(".custom-table .t-col2").css("display","none");
+        $(".custom-table .t-col3").css("display","table-cell");
+            $(".btn-tariff.btn-tariff-two").addClass("btn-tariff_active");
+            $(".btn-tariff.btn-tariff-one").removeClass("btn-tariff_active");
+    });
+
+//слайдер работ в контекстной рекламе
     $('.slider-work').owlCarousel({
         loop:true, //Зацикливаем слайдер
         margin:50, //Отступ от картино если выводите больше 1

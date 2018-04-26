@@ -71,7 +71,39 @@
       margin-bottom: 15px;
     }
   }
+
+  @include media-breakpoint-down(sm){
+    margin-bottom: 90px;
+    .head-content {
+      padding: 20px 15px 20px 15px;
+    }
+    .top-line {
+      .logo img{
+        width: 100px;
+        height: auto;
+      }
+      .phone a{
+        font-size: 14px;
+      }
+    }
+    .center-line {
+      .title {
+        font-size: 24px;
+        line-height: 26px;
+        margin: 20px 0;
+      }
+      .sub-title {
+        font-size: 18px;
+      }
+    }
+    .bottom-line p{
+      font-size: 18px;
+      line-height: 24px;
+      width: 100%;
+    }
+  }
 }
+
 
 .whom-kr {
   margin-bottom: 170px;
@@ -99,6 +131,27 @@
         line-height: 28px;
         p {
           margin: 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    margin-bottom: 90px;
+    .items {
+      margin-top: 40px;
+      .item {
+        padding-bottom: 20px;
+        .icon {
+          margin-right: 15px;
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .text {
+          font-size: 16px;
+          line-height: 20px;
         }
       }
     }
@@ -145,6 +198,30 @@
       }
     }
   }
+
+  @include media-breakpoint-down(sm){
+    margin-bottom: 90px;
+    .items {
+      margin-top: 40px;
+      .item {
+        padding-bottom: 25px;
+        .icon {
+          height: auto;
+          img {
+            width: 45px;
+          }
+        }
+        hr {
+          margin: 10px 0;
+          height: 2px;
+        }
+        .text p{
+          font-size: 16px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
 }
 
 
@@ -154,9 +231,6 @@
   .slider-work {
     margin-top: 70px;
     margin-bottom: 30px;
-    @include media-breakpoint-down(sm){
-      padding-top: 25px;
-    }
     a {
       text-decoration: none;
     }
@@ -183,10 +257,6 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-          @include media-breakpoint-down(sm) {
-            background-color: rgba(0,0,0,0.2);
-            max-width: 100%;
-          }
           .title {
             font-size: 24px;
             line-height: 26px;
@@ -239,15 +309,15 @@
     height: 12px;
     width: 12px;
     border-radius: 10px;
-    border: 1px solid $blue;
+    border: 1px solid $green;
     margin: 0 3px;
   }
   .owl-dot.active {
-    background: $blue;
+    background: $green;
     height: 12px;
     width: 12px;
     border-radius: 10px;
-    border: 1px solid $blue;
+    border: 1px solid $green;
   }
   .owl-dots {
     display: flex;
@@ -277,6 +347,41 @@
     left: -40px;
   }
 
+  @include media-breakpoint-down(sm){
+    margin-bottom: 90px;
+    .slider-work {
+      margin-top: 40px;
+      margin-bottom: 5px;
+      padding-top: 0;
+      .item {
+        .wrap-slid {
+          .wrap-descr {
+            padding-left: 15px;
+            background-color: rgba(0,0,0,0.35);
+            max-width: 100%;
+            .title, .sub-title {
+              font-size: 18px;
+              line-height: 20px;
+            }
+            .wrap-link {
+              margin-bottom: 10px;
+              a {
+                font-size: 16px;
+              }
+            }
+            .details {
+              font-size: 15px;
+              line-height: 20px;
+              ul {
+                padding-left: 20px;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -319,6 +424,64 @@
         text-decoration: none;
         color: $green;
         font-family: $OpenSansSemibold;
+      }
+    }
+  }
+
+  .button-tariff-kr {
+    margin-top: 40px;
+    text-align: center;
+    .btn-tariff {
+      background-color: transparent;
+      border: 2px solid $green;
+      padding: 7px 10px;
+      width: 120px;
+      color: $green;
+      font-family: $OpenSansRegular;
+      &:focus {
+        outline: none;
+      }
+      &_active {
+        background-color: $green;
+        color: $white;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    margin-bottom: 90px;
+    .custom-table {
+      margin-top: 40px;
+      margin-bottom: 25px;
+      .t-col1 {
+        width: 50%;
+        font-size: 14px;
+        line-height: 18px;
+        &.title {
+          font-size: 20px;
+        }
+        .small-italic {
+          font-size: 12px;
+          line-height: 16px;
+        }
+        img {
+          margin-right: 10px;
+          width: 20px;
+        }
+      }
+      .t-col2, .t-col3 {
+        width: 50%;
+        font-size: 14px;
+        line-height: 18px;
+        &.title {
+          font-size: 20px;
+        }
+        a {
+          font-size: 14px;
+        }
+      }
+      .t-col3 {
+        display: none;
       }
     }
   }
@@ -447,6 +610,23 @@
     opacity: 1;
     .overlay {
       opacity: 1;
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    bottom: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    img {
+      width: 45px;
+    }
+
+    .overlay {
+      .text {
+        font-size: 9px;
+        line-height: 10px;
+      }
     }
   }
 }
