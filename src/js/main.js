@@ -1,18 +1,20 @@
 $( document ).ready(function() {
 
 //таблица тарифов в контекстной рекламе
-    $(".btn-tariff.btn-tariff-one").click(function () {
-         $(".custom-table .t-col3").css("display","none");
-         $(".custom-table .t-col2").css("display","table-cell");
-            $(".btn-tariff.btn-tariff-one").addClass("btn-tariff_active");
-            $(".btn-tariff.btn-tariff-two").removeClass("btn-tariff_active");
 
+    function changeTable(col1, col2, one, two) {
+        $(".custom-table " + col1).css("display","none");
+        $(".custom-table "+ col2).css("display","table-cell");
+        $(".btn-tariff.btn-tariff-"+one).addClass("btn-tariff_active");
+        $(".btn-tariff.btn-tariff-"+two).removeClass("btn-tariff_active");
+    }
+
+    $(".btn-tariff.btn-tariff-one").click(function () {
+        changeTable('.t-col3', '.t-col2', 'one', 'two')
     });
+
     $(".btn-tariff.btn-tariff-two").click(function () {
-        $(".custom-table .t-col2").css("display","none");
-        $(".custom-table .t-col3").css("display","table-cell");
-            $(".btn-tariff.btn-tariff-two").addClass("btn-tariff_active");
-            $(".btn-tariff.btn-tariff-one").removeClass("btn-tariff_active");
+        changeTable('.t-col2', '.t-col3', 'two', 'one')
     });
 
 //слайдер работ в контекстной рекламе
