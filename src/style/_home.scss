@@ -256,6 +256,7 @@ header {
           font-size: 14px;
         }
         [data-wipe] {
+          text-align: center;
           &:before, &:after {
             display: none;
           }

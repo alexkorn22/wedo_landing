@@ -502,6 +502,7 @@
     .custom-card-kr {
       display: flex;
       flex-direction: row;
+      min-width: auto;
 
       .custom-card-header-kr {
         border: 0;
@@ -559,6 +560,32 @@
       top: 35px;
       border-top: 2px dotted $gray;
       z-index: 0;
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    #custom-accordion-kr {
+      margin-top: 40px;
+      display:block;
+      .custom-card-kr {
+        display: block;
+        .custom-card-header-kr {
+          display: flex;
+          align-items: center;
+          p {
+            margin:0;
+            font-size: 20px;
+            margin-left: 10px;
+            font-family: $OpenSansRegular;
+            width: 100%;
+            line-height: 24px;
+          }
+        }
+        .custom-body-kr {
+          max-width: 530px;
+          padding: 10px 0;
+        }
+      }
     }
   }
 }
