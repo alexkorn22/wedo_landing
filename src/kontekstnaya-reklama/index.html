@@ -101,7 +101,7 @@
                 <div class="row wrap-btn align-items-center justify-content-center">
                     <div class="col-12 col-xl-4">
                         <div class="button button_green">
-                            <a href="#" ontouchstart="" data-toggle="modal" data-target="#myModal"
+                            <a href="#" ontouchstart="" data-toggle="modal" data-target="#modal-discover-kr"
                                data-wipe="Узнать">Узнать</a>
                         </div>
                     </div>
@@ -264,7 +264,7 @@
         <div class="row wrap-btn align-items-center justify-content-center">
             <div class="col-12 col-xl-4">
                 <div class="button button_blue">
-                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#myModal" class="btn-pink"
+                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#modal-order-kr" class="btn-pink"
                        data-wipe="Заказать контекстную рекламу">Заказать контекстную рекламу</a>
                 </div>
             </div>
@@ -356,9 +356,9 @@
                 <tr>
                     <th class="t-col1" scope="row">Ежемесячный бюджет на клики <br> <span class="small-italic">Эту сумму вы вносите непосредственно в рекламный аккаунт Google или Яндекс. Они расходуются исключительно на клики. </span></th>
                     <td class="t-col2">Рассчитывается индивидуально для каждого бизнеса. Вы можете оплачивать как рекомендованную нами сумму, так и меньше. Мы предоставляем сведения о том, какое количество клиентов вы получите за ту сумму, которую планируете вложить.
-                        <br><br><a href="">Заказать бесплатный расчёт</a></td>
+                        <br><br><a href="#" data-toggle="modal" data-target="#modal-freecalc-kr">Заказать бесплатный расчёт</a></td>
                     <td class="t-col3">Рассчитывается индивидуально для каждого бизнеса. Вы можете оплачивать как рекомендованную нами сумму, так и меньше. Мы предоставляем сведения о том, какое количество клиентов вы получите за ту сумму, которую планируете вложить.
-                        <br><br><a href="">Заказать бесплатный расчёт</a></td>
+                        <br><br><a href="#" data-toggle="modal" data-target="#modal-freecalc-kr">Заказать бесплатный расчёт</a></td>
                 </tr>
                 <tr>
                     <th class="t-col1" scope="row"><img src="../img/icons/gift.png" alt="Gift">Ваши подарки</th>
@@ -371,7 +371,7 @@
         <div class="row wrap-btn align-items-center justify-content-center">
             <div class="col-12 col-xl-4">
                 <div class="button button_green">
-                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#myModal" class="btn-pink"
+                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#modal-order-kr"
                        data-wipe="Заказать контекстную рекламу">Заказать контекстную рекламу</a>
                 </div>
             </div>
@@ -477,7 +477,7 @@
         <div class="row wrap-btn align-items-center justify-content-center">
             <div class="col-12 col-xl-6">
                 <div class="button button_green">
-                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#myModal"
+                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#modal-order-kr"
                        data-wipe="Заполнить заявку на контекстную рекламу">Заполнить заявку на контекстную рекламу</a>
                 </div>
             </div>
@@ -486,7 +486,7 @@
 </div>
 
 <div class="call-back-kr">
-    <a href="#" ontouchstart="" data-toggle="modal" data-target="#myModal" class="btn-pink">
+    <a href="#" ontouchstart="" data-toggle="modal" data-target="#modal-callback-kr">
         <img src="../img/icons/shake-phone.png" alt="Phone">
         <div class="overlay">
             <div class="text">Обратный звонок</div>
@@ -504,6 +504,284 @@
                         <a href="tel:+38(098)150-83-95">+38(098)150-83-95</a>
                     </div>
                     <p>© Copyright 2018, Все права защищены</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal call-us fade modal-kr" id="modal-callback-kr">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-2 justify-content-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/icons/close(black).png" alt="close">
+                        </button>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <p class="modal-title">Заказ обратного звонка</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                        <div class="card">
+                            <form id="callback-form">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="input-container">
+                                            <input type="text" id="Username" name="Username" required>
+                                            <label for="Username">Имя</label>
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="input-container number">
+                                            <input class="form-control bfh-phone" type="text" id="Phone" value=""
+                                                   name="Phone" data-format="+380 (dd) ddd-dd-dd" required>
+                                            <label for="Phone">Телефон</label>
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div id="errorMessage" style="display: none">{{ error_mes }}</div>
+                                    </div>
+                                </div>
+                                <div class="button-container">
+                                    <div class="wrap-btn">
+                                        <div class="button button_green">
+                                            <button type="submit" ontouchstart="" class="btn" data-wipe="Отправить">Отправить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-kr" id="modal-discover-kr">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-2 justify-content-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/icons/close(black).png" alt="close">
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <form id="discover-form">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="input-container">
+                                        <input type="text" id="address-discover" name="address-discover">
+                                        <label for="address-discover">Адрес сайта</label>
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="input-container number">
+                                        <input class="form-control bfh-phone" type="text" id="phone-discover" value=""
+                                               name="phone-discover" data-format="+380 (dd) ddd-dd-dd" required>
+                                        <label for="phone-discover">Ваш телефон</label>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <div id="errorMessage1" style="display: none">{{ error_mes }}</div>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="budget-discover" name="budget-discover" required>
+                                <label for="budget-discover">Плановый бюджет в месяц</label>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="goods-discover" name="goods-discover" required>
+                                <label for="goods-discover">Рекламируемые товары и услуги</label>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="regions-discover" name="regions-discover" required>
+                                <label for="regions-discover">Регионы для показа рекламы</label>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="button-container">
+                                <div class="wrap-btn">
+                                    <div class="button button_green">
+                                        <button type="submit" ontouchstart="" class="btn" data-wipe="Получить предложение">Получить предложение</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-kr" id="modal-order-kr">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-2 justify-content-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/icons/close(black).png" alt="close">
+                        </button>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <p class="modal-title">Наш менеджер свяжется с Вами, чтобы обсудить контекстную рекламу</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <form id="order-kr-form">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="input-container">
+                                        <input type="text" id="address-order-kr" name="address-order-kr">
+                                        <label for="address-order-kr">Адрес сайта</label>
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="input-container number">
+                                        <input class="form-control bfh-phone" type="text" id="phone-order-kr" value=""
+                                               name="phone-order-kr" data-format="+380 (dd) ddd-dd-dd" required>
+                                        <label for="phone-order-kr">Ваш телефон</label>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <div id="errorMessage2" style="display: none">{{ error_mes }}</div>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <select class="form-control" id="select-tariff" name="select-tariff" required>
+                                    <option value="" disabled selected>не указано</option>
+                                    <option value="разработка">разработка</option>
+                                    <option value="основной">основной</option>
+                                </select>
+                                <label for="select-tariff">Тариф</label>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="regions-order-kr" name="regions-order-kr" required>
+                                <label for="regions-order-kr">Регионы для показа рекламы</label>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="input-container">
+                                <label for="comment">Комментарий</label>
+                                <textarea id="comment" name="comment"></textarea>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="button-container">
+                                <div class="wrap-btn">
+                                    <div class="button button_green">
+                                        <button type="submit" ontouchstart="" class="btn" data-wipe="Отправить">Отправить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-kr" id="modal-freecalc-kr">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-2 justify-content-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/icons/close(black).png" alt="close">
+                        </button>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <p class="modal-title">Заказ бесплатного расчёта</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <form id="freecalc-kr-form">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="input-container">
+                                        <input type="text" id="address-freecalc" name="address-freecalc">
+                                        <label for="address-freecalc">Адрес сайта</label>
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="input-container number">
+                                        <input class="form-control bfh-phone" type="text" id="phone-freecalc" value=""
+                                               name="phone-freecalc" data-format="+380 (dd) ddd-dd-dd" required>
+                                        <label for="phone-freecalc">Ваш телефон</label>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <div id="errorMessage3" style="display: none">{{ error_mes }}</div>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="goods-freecalc" name="goods-freecalc" required>
+                                <label for="goods-freecalc">Рекламируемые товары и услуги</label>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="regions-freecalc" name="regions-freecalc" required>
+                                <label for="regions-freecalc">Регионы для показа рекламы</label>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="input-container">
+                                <label for="comment">Комментарий</label>
+                                <textarea id="comment-freecalc" name="comment-freecalc"></textarea>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="button-container">
+                                <div class="wrap-btn">
+                                    <div class="button button_green">
+                                        <button type="submit" ontouchstart="" class="btn" data-wipe="Отправить">Отправить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-kr fade" id="modal-thank" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-2 justify-content-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/icons/close(black).png" alt="close">
+                        </button>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <p class="modal-title">Cпасибо! Мы свяжемся с вами в ближайшее время.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-btn">
+                <div class="button button_green">
+                    <a href="#" ontouchstart="" data-dismiss="modal" data-wipe="ok">ok</a>
                 </div>
             </div>
         </div>

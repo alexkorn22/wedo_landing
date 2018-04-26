@@ -897,7 +897,7 @@ footer {
   background: transparent;
   border: none;
 
-  #errorMessage {
+  #errorMessage, #errorMessage1, #errorMessage2, #errorMessage3 {
     top: 175px;
     position: absolute;
     left: 35px;
@@ -910,7 +910,7 @@ footer {
     position: relative;
     margin: 0 35px 40px;
 
-    input, .selectric {
+    input, .selectric, textarea {
       outline: none;
       z-index: 1;
       position: relative;
@@ -992,6 +992,66 @@ footer {
   }
 }
 
+.modal-kr {
+  .modal-content {
+    border-radius: 4px;
+    background-image: none;
+    min-height: 100%;
+    .modal-title {
+      font-size: 20px;
+      line-height: 25px;
+      font-family: $OpenSansRegular;
+      padding-bottom: 15px;
+      @include media-breakpoint-down(sm) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    .card {
+      .input-container {
+        input, .selectric, textarea {
+          &:focus {
+            box-shadow: none;
+            ~ label {
+              color: $gray;
+            }
+            ~ .bar {
+              &:before,
+              &:after {
+                width: 50%;
+              }
+            }
+          }
+        }
+        textarea {
+          margin-top: 10px;
+        }
+
+        label {
+          font-size: 18px;
+          transform: translate(-12%, -50%) scale(0.75);
+          @include media-breakpoint-down(sm) {
+            font-size: 14px;
+          }
+        }
+        .bar {
+          background: $grayLight;
+          &:before,
+          &:after {
+            background: $green;
+          }
+        }
+      }
+      .button-container {
+        .wrap-btn {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
 .number:hover::after{
   content: "+380(67)111-22-33";
   cursor: pointer;
@@ -1004,21 +1064,5 @@ footer {
   padding: 5px 10px;
 }
 
-/*.wrap-alert {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  #alert {
-    width: 350px;
-    height: 180px;
-    position: absolute;
-    background-color: $white;
-    z-index: 10;
-    top: 20%;
-    display: none;
-    text-align: center;
-    padding: 25px 10px 15px 10px;
-  }
-}*/
 
 
