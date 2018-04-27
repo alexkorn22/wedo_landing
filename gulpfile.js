@@ -92,6 +92,7 @@ gulp.task('html:generate-en', function () {
  gulp.task('html:build', function () {
     gulp.src(path.src.html)
         .pipe(rigger())
+        .pipe(htmlmin({collapseWhitespace: true, minifyCSS: true, minifyJS: true}))
          .pipe(gulp.dest(path.build.html))
          .pipe(reload({stream: true}));
  });
