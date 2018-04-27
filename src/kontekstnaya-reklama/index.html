@@ -166,7 +166,7 @@
             </div>
         </div>
         <div class="row items">
-            <div class="col-xl-4">
+            <div class="col-lg-4 col-xl-4">
                 <div class="item">
                     <div class="icon">
                         <img src="../img/icons/search-property.png" alt="search">
@@ -177,7 +177,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4">
+            <div class="col-lg-4 col-xl-4">
                 <div class="item">
                     <div class="icon">
                         <img src="../img/icons/user-group-man.png" alt="search">
@@ -188,7 +188,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4">
+            <div class="col-lg-4 col-xl-4">
                 <div class="item">
                     <div class="icon">
                         <img src="../img/icons/online-payment.png" alt="search">
@@ -280,11 +280,11 @@
                 <p></p>
             </div>
         </div>
-        <div class="row button-tariff-kr">
-            <div class="col-6 d-block d-md-none">
+        <div class="row button-tariff-kr d-flex d-md-none">
+            <div class="col-6">
                 <button class="btn-tariff btn-tariff-one btn-tariff_active">Разработка</button>
             </div>
-            <div class="col-6 d-block d-md-none">
+            <div class="col-6">
                 <button class="btn-tariff btn-tariff-two">Основной</button>
             </div>
         </div>
@@ -395,11 +395,11 @@
                         <button class="btn btn_green_square" data-toggle="collapse" data-target="#stage1" aria-expanded="true" aria-controls="stage1">
                             1
                         </button>
-                        <p class="d-block d-md-none">Планирование</p>
+                        <p class="d-block d-lg-none">Планирование</p>
                     </div>
                     <div id="stage1" class="collapse fade show" aria-labelledby="headingOne" data-parent="#custom-accordion-kr">
                         <div class="card-body custom-body-kr">
-                            <p class="d-none d-md-block">Планирование</p>
+                            <p class="d-none d-lg-block">Планирование</p>
                             <ul>
                                 <li>Изучение вашего бизнеса и ниши</li>
                                 <li>Анализ конкурентов</li>
@@ -413,11 +413,11 @@
                         <button class="btn btn_green_square collapsed" data-toggle="collapse" data-target="#stage2" aria-expanded="true" aria-controls="stage2">
                             2
                         </button>
-                        <p class="d-block d-md-none">Разработка рекламной кампании</p>
+                        <p class="d-block d-lg-none">Разработка рекламной кампании</p>
                     </div>
                     <div id="stage2" class="collapse fade" aria-labelledby="headingTwo" data-parent="#custom-accordion-kr">
                         <div class="card-body custom-body-kr">
-                            <p class="d-none d-md-block">Разработка рекламной кампании</p>
+                            <p class="d-none d-lg-block">Разработка рекламной кампании</p>
                             <ul>
                                 <li>Сбор ключевых слов</li>
                                 <li>Составление списка минус-слов</li>
@@ -432,11 +432,11 @@
                         <button class="btn btn_green_square collapsed" data-toggle="collapse" data-target="#stage3" aria-expanded="true" aria-controls="stage3">
                             3
                         </button>
-                        <p class="d-block d-md-none">Настраиваем рекламную кампанию</p>
+                        <p class="d-block d-lg-none">Настраиваем рекламную кампанию</p>
                     </div>
                     <div id="stage3" class="collapse fade" aria-labelledby="headingThird" data-parent="#custom-accordion-kr">
                         <div class="card-body custom-body-kr">
-                            <p class="d-none d-md-block">Настраиваем рекламную кампанию</p>
+                            <p class="d-none d-lg-block">Настраиваем рекламную кампанию</p>
                             <ul>
                                 <li>Загружаем согласованную с вами рекламную кампанию в соответствующую поисковую систему</li>
                                 <li>Настраиваем регион, время и режим показов</li>
@@ -452,11 +452,11 @@
                         <button class="btn btn_green_square collapsed" data-toggle="collapse" data-target="#stage4" aria-expanded="true" aria-controls="stage4">
                             4
                         </button>
-                        <p class="d-block d-md-none">Сопровождение (ежедневное)</p>
+                        <p class="d-block d-lg-none">Сопровождение (ежедневное)</p>
                     </div>
                     <div id="stage4" class="collapse fade" aria-labelledby="headingFour" data-parent="#custom-accordion-kr">
                         <div class="card-body custom-body-kr">
-                            <p class="d-none d-md-block">Сопровождение (ежедневное)</p>
+                            <p class="d-none d-lg-block">Сопровождение (ежедневное)</p>
                             <ul>
                                 <li>Корректировка стратегии показов</li>
                                 <li>Добавление минус-слов</li>
@@ -470,7 +470,7 @@
                         </div>
                     </div>
                 </div>
-                <hr class="dotted-line d-none d-md-block">
+                <hr class="dotted-line d-none d-lg-block">
             </div>
             </div>
         </div>
@@ -544,7 +544,7 @@
                                             <label for="Phone">Телефон</label>
                                             <div class="bar"></div>
                                         </div>
-                                        <div id="errorMessage" style="display: none">{{ error_mes }}</div>
+                                        <div id="errorMessage" style="display: none">Укажите Ваш телефон. (см. подсказку)</div>
                                     </div>
                                 </div>
                                 <div class="button-container">
@@ -591,7 +591,7 @@
                                         <label for="phone-discover">Ваш телефон</label>
                                         <div class="bar"></div>
                                     </div>
-                                    <div id="errorMessage1" style="display: none">{{ error_mes }}</div>
+                                    <div id="errorMessage1" style="display: none">Укажите Ваш телефон. (см. подсказку)</div>
                                 </div>
                             </div>
                             <div class="input-container">
@@ -636,7 +636,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-10">
+                    <div class="col-12 col-lg-10">
                         <p class="modal-title">Наш менеджер свяжется с Вами, чтобы обсудить контекстную рекламу</p>
                     </div>
                 </div>
@@ -658,7 +658,7 @@
                                         <label for="phone-order-kr">Ваш телефон</label>
                                         <div class="bar"></div>
                                     </div>
-                                    <div id="errorMessage2" style="display: none">{{ error_mes }}</div>
+                                    <div id="errorMessage2" style="display: none">Укажите Ваш телефон. (см. подсказку)</div>
                                 </div>
                             </div>
                             <div class="input-container">
@@ -729,7 +729,7 @@
                                         <label for="phone-freecalc">Ваш телефон</label>
                                         <div class="bar"></div>
                                     </div>
-                                    <div id="errorMessage3" style="display: none">{{ error_mes }}</div>
+                                    <div id="errorMessage3" style="display: none">Укажите Ваш телефон. (см. подсказку)</div>
                                 </div>
                             </div>
                             <div class="input-container">

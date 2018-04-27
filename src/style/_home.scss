@@ -898,9 +898,9 @@ footer {
   border: none;
 
   #errorMessage, #errorMessage1, #errorMessage2, #errorMessage3 {
-    top: 175px;
+    bottom: 10px;
     position: absolute;
-    left: 35px;
+    left: 5px;
     font-size: 12px;
     color: #ff0000;
   }
@@ -1047,6 +1047,20 @@ footer {
         .wrap-btn {
           padding: 0;
         }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    .card {
+      .input-container {
+        margin: 0 5px 36px;
+        input, .selectric, textarea {
+          height: 40px;
+        }
+      }
+      .wrap-btn {
+        height: 70px;
       }
     }
   }

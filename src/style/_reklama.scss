@@ -198,7 +198,20 @@
       }
     }
   }
-
+  @include media-breakpoint-down(md)
+  {
+    .items {
+      .item {
+        padding-bottom: 25px;
+        .icon {
+          height: auto;
+          img {
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
   @include media-breakpoint-down(sm){
     margin-bottom: 90px;
     .items {
@@ -489,10 +502,10 @@
 
 
 .stages-kr {
+  margin-bottom: 40px;
 
   #custom-accordion-kr {
     margin-top: 70px;
-    margin-bottom: 30px;
     display: flex;
     min-height: 380px;
     width: 100%;
@@ -562,7 +575,30 @@
       z-index: 0;
     }
   }
-
+  @include media-breakpoint-down(md){
+    #custom-accordion-kr {
+      display:block;
+      .custom-card-kr {
+        display: block;
+        .custom-card-header-kr {
+          display: flex;
+          align-items: center;
+          p {
+            margin:0;
+            font-size: 28px;
+            margin-left: 10px;
+            font-family: $OpenSansRegular;
+            width: 100%;
+            line-height: 28px;
+          }
+        }
+        .custom-body-kr {
+          max-width: 530px;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
   @include media-breakpoint-down(sm){
     #custom-accordion-kr {
       margin-top: 40px;
