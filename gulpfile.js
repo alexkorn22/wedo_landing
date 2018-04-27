@@ -68,7 +68,7 @@ gulp.task('pre-clean', function() {
 
 gulp.task('html:generate-ru', function () {
     delete require.cache[require.resolve('./templates/ru.json')];
-    return gulp.src("./src/*/*.html")
+    return gulp.src("./src/*.html")
         .pipe(data(function() {
             return require("./templates/ru.json")
         }))

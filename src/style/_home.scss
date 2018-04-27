@@ -2,17 +2,27 @@
 /*BEGIN header*/
 
 header {
-  height: 300px;
+  height: 100vh;
   @include media-breakpoint-up(sm){
-    height: 550px;
+    height: 100vh;
   }
   background-color: $bgHead;
+
+  .b-head-height {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding-bottom: 40px;
+  }
+
   .parallax {
     position: absolute;
     width: 100%;
     height: 550px;
     overflow: hidden;
     left: 0;
+    top: 30%;
     .image-parallax {
       position: absolute;
       width: 100%;
@@ -51,7 +61,7 @@ header {
         width: 170px;
       }
       @include media-breakpoint-up(lg){
-        width: 268px;
+        width: 180px;
       }
 
       img {
@@ -757,7 +767,7 @@ footer {
     .item {
       &:last-child {
       order: -1;
-      margin: 30px 0;
+      margin: 0;
       display: flex;
       justify-content: flex-start;
       @include media-breakpoint-up(sm) {
