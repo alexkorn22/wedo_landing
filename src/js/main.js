@@ -121,30 +121,34 @@ $( document ).ready(function() {
 
 //Аякс отправка форм
     //Документация: http://api.jquery.com/jquery.ajax/
-    $("#callback-form").submit(function() {
-        var str =   $("#Phone").val();
-        var found = str.match(/(?:\w)(?:(?:(?:(?:\+?3)?8\W{0,5})?0\W{0,5})?[34569]\s?\d[^\w,;(\+]{0,5})?\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d(?!(\W?\d))/)
+    var formArr = ['order-kr-form','callback-form','discover-form', 'freecalc-kr-form'];
 
-        if (found !== null) {
-            $.ajax({
-                type: "POST",
-                url: "mail.php",
-                data: $("#callback-form").serialize()
-            }).done(function() {
-                $('.modal').modal('toggle');
-                setTimeout(function() {
-                    //alert(message);
-                    // $('#alert').css("display", "block");
-                   // $("#myModal2").css("display", "block").addClass('show');
-                    $('#myModal2').fadeIn();
-                }, 700);
-            });
-        }
-        else {
-            $('#errorMessage').css("display","block");
-        }
-        return false;
-    });
+    formArr.forEach(function (elem) {
+        $('#'+ elem).submit(function () {
+
+            var str =  $(this).find("input[id^='phone']").val();
+            var found = str.match(/(?:\w)(?:(?:(?:(?:\+?3)?8\W{0,5})?0\W{0,5})?[34569]\s?\d[^\w,;(\+]{0,5})?\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d(?!(\W?\d))/);
+            var testNumber = str && found !== null;
+
+            if (testNumber) {
+                $.ajax({
+                    type: "POST",
+                    url: "mail.php",
+                    data: $(this).serialize()
+                }).done(function() {
+                    $('.modal').modal('toggle');
+                    setTimeout(function() {
+                        $('#modal-thank').fadeIn();
+                    }, 700);
+                });
+            }
+
+            else {
+                $('#errorMessage').css("display","block");
+            }
+            return false;
+        })
+    })
 
 
 
