@@ -129,40 +129,34 @@ $( document ).ready(function() {
 
 //Аякс отправка форм
     //Документация: http://api.jquery.com/jquery.ajax/
-    var formArr = ['order-kr-form','callback-form-kr','discover-form', 'freecalc-kr-form', 'callback-form'];
+    // var formArr = ['order-kr-form','callback-form-kr','discover-form', 'freecalc-kr-form', 'callback-form'];
 
-    formArr.forEach(function (elem) {
-        $('#'+ elem).submit(function () {
+    var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr', 'modal-freecalc-kr', 'myModal'];
 
+    formArrModal.forEach(function (elem) {
+
+        var singleFotm = $('#'+ elem).find('form');
+        var _modal =  $('#'+ elem);
+        singleFotm.submit(function () {
             var str =  $(this).find("input[id^='phone']").val();
             var found = str.match(/(?:\w)(?:(?:(?:(?:\+?3)?8\W{0,5})?0\W{0,5})?[34569]\s?\d[^\w,;(\+]{0,5})?\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d(?!(\W?\d))/);
             var testNumber = str && found !== null;
-
-
             if (testNumber) {
                 $.ajax({
                     type: "POST",
                     url: "mail.php",
                     data: $(this).serialize()
                 }).done(function() {
-                    $('.modal').modal('toggle');
-                    setTimeout(function() {
-                        $('#modal-thank').fadeIn();
-                    }, 700);
+                    _modal.modal('toggle');
+                    $('#modal-thank').modal('toggle');
                 });
             }
-
             else {
                 $('.errorMessage').css("display","block");
             }
             return false;
         })
     });
-
-
-
-
-
 
 
     $('#open-close').show();
