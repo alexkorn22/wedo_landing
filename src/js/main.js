@@ -138,6 +138,7 @@ $( document ).ready(function() {
             var found = str.match(/(?:\w)(?:(?:(?:(?:\+?3)?8\W{0,5})?0\W{0,5})?[34569]\s?\d[^\w,;(\+]{0,5})?\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d\W{0,5}\d(?!(\W?\d))/);
             var testNumber = str && found !== null;
 
+
             if (testNumber) {
                 $.ajax({
                     type: "POST",
@@ -156,7 +157,11 @@ $( document ).ready(function() {
             }
             return false;
         })
-    })
+    });
+
+
+
+
 
 
 
