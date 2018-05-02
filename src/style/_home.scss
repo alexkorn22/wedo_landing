@@ -907,7 +907,7 @@ footer {
   background: transparent;
   border: none;
 
-  #errorMessage, #errorMessage1, #errorMessage2, #errorMessage3 {
+  .errorMessage {
     bottom: 10px;
     position: absolute;
     left: 5px;

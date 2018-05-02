@@ -1,5 +1,13 @@
 $( document ).ready(function() {
 
+    $(".s-accordion .panel").on('click', function() {
+        var $this = $(this);
+        $this.css('width','55%');
+        $(".s-accordion .panel").addClass('active-tab');
+        $this.siblings('div').css('width','15%');
+        $this.siblings($this).removeClass('active-tab');
+    });
+
 //таблица тарифов в контекстной рекламе
 
     function changeTable(col1, col2, one, two) {
@@ -121,7 +129,7 @@ $( document ).ready(function() {
 
 //Аякс отправка форм
     //Документация: http://api.jquery.com/jquery.ajax/
-    var formArr = ['order-kr-form','callback-form','discover-form', 'freecalc-kr-form'];
+    var formArr = ['order-kr-form','callback-form-kr','discover-form', 'freecalc-kr-form', 'callback-form'];
 
     formArr.forEach(function (elem) {
         $('#'+ elem).submit(function () {
@@ -144,7 +152,7 @@ $( document ).ready(function() {
             }
 
             else {
-                $('#errorMessage').css("display","block");
+                $('.errorMessage').css("display","block");
             }
             return false;
         })
