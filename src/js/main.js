@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 
+//аккордион, контекстная реклама. десктоп
     $(".s-accordion .panel").on('click', function() {
         var $this = $(this);
         $this.css('width','55%');
@@ -9,18 +10,15 @@ $( document ).ready(function() {
     });
 
 //таблица тарифов в контекстной рекламе
-
     function changeTable(col1, col2, one, two) {
         $(".custom-table " + col1).css("display","none");
         $(".custom-table "+ col2).css("display","table-cell");
         $(".btn-tariff.btn-tariff-"+one).addClass("btn-tariff_active");
         $(".btn-tariff.btn-tariff-"+two).removeClass("btn-tariff_active");
     }
-
     $(".btn-tariff.btn-tariff-one").click(function () {
         changeTable('.t-col3', '.t-col2', 'one', 'two')
     });
-
     $(".btn-tariff.btn-tariff-two").click(function () {
         changeTable('.t-col2', '.t-col3', 'two', 'one')
     });
@@ -29,7 +27,7 @@ $( document ).ready(function() {
     $('.slider-work').owlCarousel({
         loop:true, //Зацикливаем слайдер
         margin:50, //Отступ от картино если выводите больше 1
-        autoplay:false, //Автозапуск слайдера
+        autoplay:true, //Автозапуск слайдера
         smartSpeed:2000, //Время движения слайда
         autoplayTimeout:7000, //Время смены слайда
         dots: false,
@@ -52,6 +50,7 @@ $( document ).ready(function() {
         }
     });
 
+//селектрик. вроде кастомный
     $(function() {
         $('select').selectric();
     });
@@ -76,7 +75,6 @@ $( document ).ready(function() {
             $(el).css('top', newY + 'px');
         });
     });
-
 
 //timeline
     (function() {
@@ -110,14 +108,10 @@ $( document ).ready(function() {
 
     })();
 
-
-
 //открытие модального окна
     $('#myModal').on('shown.bs.modal', function () {
         // $('#myInput').focus()
     });
-
-
 
 //плавый скролл
     $("#menu").on("click","a", function (event) {
@@ -128,13 +122,10 @@ $( document ).ready(function() {
     });
 
 //Аякс отправка форм
-    //Документация: http://api.jquery.com/jquery.ajax/
-    // var formArr = ['order-kr-form','callback-form-kr','discover-form', 'freecalc-kr-form', 'callback-form'];
-
+//Документация: http://api.jquery.com/jquery.ajax/
+// var formArr = ['order-kr-form','callback-form-kr','discover-form', 'freecalc-kr-form', 'callback-form'];
     var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr', 'modal-freecalc-kr', 'myModal'];
-
     formArrModal.forEach(function (elem) {
-
         var singleFotm = $('#'+ elem).find('form');
         var _modal =  $('#'+ elem);
         singleFotm.submit(function () {
@@ -166,12 +157,5 @@ $( document ).ready(function() {
         event.preventDefault(); // Для того чтобы при нажатии на ссылку не кидало вверх
         $('.wrap-alert').slideToggle();
     });
-
-
-    //Регулярные выражения на проверку телефона
-    /* $( "#Phone" ).onfocus(function() {
-         $(this).removeClass("bfh-phone");
-
-     });*/
 
 });

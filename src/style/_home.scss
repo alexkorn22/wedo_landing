@@ -19,16 +19,15 @@ header {
   .parallax {
     position: absolute;
     width: 100%;
-    height: 550px;
+    height: 80vh;
     overflow: hidden;
     left: 0;
-    top: 30%;
     .image-parallax {
       position: absolute;
       width: 100%;
       height: 255px;
       @include media-breakpoint-up(sm){
-        height: 550px;
+        height: 100%;
       }
       left:0;
       background-repeat: no-repeat;
