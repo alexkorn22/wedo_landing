@@ -27,14 +27,14 @@ var path = {
         fonts: 'build/fonts/'
     },
     src: {
-        html: 'src/*.html',
+        html: 'src/**/**/*.html',
         js: 'src/js/*.js',
         style: 'src/style/main.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
-        html: 'src/**/*.html',
+        html: 'src/**/**/*.html',
         js: 'src/js/**/*.js',
         style: 'src/style/**/*.scss',
         img: 'src/img/**/*.*',
@@ -89,12 +89,13 @@ gulp.task('html:generate-en', function () {
         .pipe(gulp.dest("./build/en"));
 });
 
-gulp.task('html:build', function () {
-    gulp.src(path.src.html) 
+ gulp.task('html:build', function () {
+    gulp.src(path.src.html)
         .pipe(rigger())
-        .pipe(gulp.dest(path.build.html))
-        .pipe(reload({stream: true}));
-});
+        .pipe(htmlmin({collapseWhitespace: true, minifyCSS: true, minifyJS: true}))
+         .pipe(gulp.dest(path.build.html))
+         .pipe(reload({stream: true}));
+ });
 
 gulp.task('js:build', function () {
     gulp.src(path.src.js) 
@@ -126,12 +127,12 @@ gulp.task('style:build', function () {
 
 gulp.task('image:build', function () {
     gulp.src(path.src.img) 
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()],
-            interlaced: true
-        }))
+        // .pipe(imagemin({
+        //     progressive: true,
+        //     svgoPlugins: [{removeViewBox: false}],
+        //     use: [pngquant()],
+        //     interlaced: true
+        // }))
         .pipe(gulp.dest(path.build.img))
         .pipe(reload({stream: true}));
 });
@@ -142,7 +143,7 @@ gulp.task('fonts:build', function() {
 });
 
 gulp.task('build', [
-    'html:build',
+    // 'html:build',
     'html:generate-ru',
     'html:generate-en',
     'js:build',
@@ -151,10 +152,16 @@ gulp.task('build', [
     'image:build'
 ]);
 
+gulp.task('watch-static', function(){
+    watch([path.watch.html], function(event, cb) {
+       gulp.start(['html:build']);
+    });
+});
 
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
-        gulp.start(['html:build','html:generate-ru','html:generate-en']);
+        // gulp.start(['html:build','html:generate-ru','html:generate-en']);
+        gulp.start(['html:generate-ru','html:generate-en']);
     });
     watch([path.watch.style], function(event, cb) {
         gulp.start('style:build');
@@ -171,4 +178,4 @@ gulp.task('watch', function(){
 });
 
 
-gulp.task('default', ['build', 'webserver', 'watch']);
+gulp.task('default', ['build', 'webserver', 'watch' ,'watch-static']);

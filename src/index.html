@@ -73,7 +73,7 @@
 	</noscript>
 
 	<header>
-		<div class="container">
+		<div class="container b-head-height">
 			<div class="parallax">
 				<div class="image-parallax man"></div>
 			</div>
@@ -307,11 +307,11 @@
 										<div class="bar"></div>
 									</div>
 									<div class="input-container number">
-										<input class="form-control bfh-phone" type="text" id="Phone" value="" name="Phone" data-format="+380 (dd) ddd-dd-dd" required>
-										<label for="Phone">{{input_phone}}</label>
+										<input class="form-control bfh-phone" type="text" id="phone" value="" name="phone" data-format="+380 (dd) ddd-dd-dd" required>
+										<label for="phone">{{input_phone}}</label>
 										<div class="bar"></div>
 									</div>
-									<div id="errorMessage" style="display: none">{{error_mes}}</div>
+									<div class="errorMessage" style="display: none">{{error_mes}}</div>
 									<div class="input-container">
 										<select class="form-control" id="select" name="select" required>
 											<option value="" disabled selected>{{select_title}}</option>
@@ -349,7 +349,7 @@
         </div>
     </div>-->
 	<!-- END Modal -->
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-thank" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -380,6 +380,7 @@
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="{{path}}js/owl.carousel.min.js"></script>
 	<script src="{{path}}js/main.js"></script>
 	<!--<script src="js/bootstrap-formhelpers.min.js"></script>-->
 	</body>
