@@ -1,4 +1,4 @@
-.head-seo, .whom-seo, .we-do-seo {
+.head-seo, .whom-seo, .we-do-seo, .features-seo {
   margin-bottom: 170px;
 }
 
@@ -165,6 +165,41 @@
         line-height: 22px;
         margin: 0;
         max-width: 400px;
+      }
+    }
+  }
+}
+
+
+.features-seo {
+
+  .tiles {
+    margin-top: 60px;
+
+    .tile{
+      //width: 200px;
+      height: 200px;
+      box-shadow: 0 6px 20px 0 rgba($black, 0.15);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: center;
+      text-align: center;
+      transition: 0.5s;
+      &:hover {
+        box-shadow: 0 6px 25px 0 rgba($black, 0.25);
+      }
+      .icon {
+        margin-bottom: 15px;
+        max-width: 40px;
+        height:auto;
+      }
+      .text {
+        margin: 0;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0 10px;
       }
     }
   }
