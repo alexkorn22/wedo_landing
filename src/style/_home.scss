@@ -320,6 +320,9 @@ header {
   }
   h2:last-child {
     font-family: $OpenSansSemibold;
+    &.title_light {
+      font-family: $OpenSansLight;
+    }
   }
   p {
     font-size: 32px;
