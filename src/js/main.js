@@ -139,7 +139,7 @@ $( document ).ready(function() {
 //Аякс отправка форм
 //Документация: http://api.jquery.com/jquery.ajax/
 // var formArr = ['order-kr-form','callback-form-kr','discover-form', 'freecalc-kr-form', 'callback-form'];
-    var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr', 'modal-freecalc-kr', 'myModal'];
+    var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr', 'modal-freecalc-kr', 'myModal', 'modal-free-audit-seo', 'modal-order-promotion-seo1', 'modal-order-promotion-seo2', 'modal-order-consultation-seo'];
     formArrModal.forEach(function (elem) {
         var singleFotm = $('#'+ elem).find('form');
         var _modal =  $('#'+ elem);
