@@ -1,4 +1,4 @@
-.head-seo, .whom-seo, .we-do-seo, .features-seo, .result-seo, .our-garanties-seo {
+.head-seo, .whom-seo, .we-do-seo, .features-seo, .result-seo, .our-garanties-seo, .stages-seo {
   margin-bottom: 170px;
 }
 
@@ -366,5 +366,164 @@
         }
       }
     }
+  }
+}
+
+.stages-seo {
+
+  .wrap-stages{
+    margin-top: 60px;
+
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+
+    @media(min-width: 520px) {
+      p {
+        width: 100%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        position: relative;
+        // line is made up of 2 pseudo elements
+        // so that we can hide the first and last
+        &::before,
+        &::after {
+          display: block;
+          content: "";
+          width: 3px;
+          height: 50%;
+          background: $green;
+          position: absolute;
+        }
+        &::before {
+          top: 0;
+        }
+        &::after {
+          bottom: 0;
+        }
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        position: relative;
+        // row 1,3,5
+        &:nth-child(odd) {
+          text-align: right;
+          p {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 50%;
+            padding-right: 100px;
+            span {
+              display: flex;
+              flex-direction: column;
+              font-size: 20px;
+              font-family: $OpenSansRegular;
+              line-height: 20px;
+              padding: 15px;
+              box-shadow: 0 6px 20px 0 rgba($black, 0.1);
+              transition: 0.3s;
+              span {
+                font-family: $OpenSansLight;
+                font-size: 16px;
+                line-height: 20px;
+                margin-top: 5px;
+                box-shadow: none;
+                padding: 0;
+              }
+              &:hover {
+                box-shadow: 0 8px 20px 0 rgba($black, 0.12);
+                span {
+                  box-shadow: none;
+                }
+              }
+            }
+
+            &::before,
+            &::after {
+              right: -1px;
+            }
+          }
+        }
+        // row 2,4
+        &:nth-child(even) {
+          p {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 50%;
+            padding-left: 100px;
+            span {
+              display: flex;
+              flex-direction: column;
+              font-size: 20px;
+              font-family: $OpenSansRegular;
+              line-height: 20px;
+              padding: 15px;
+              box-shadow: 0 6px 20px 0 rgba($black, 0.2);
+              transition: 0.3s;
+              span {
+                font-family: $OpenSansLight;
+                font-size: 16px;
+                line-height: 20px;
+                margin-top: 5px;
+                box-shadow: none;
+                padding: 0;
+              }
+              &:hover {
+                box-shadow: 0 8px 20px 0 rgba($black, 0.22);
+                span {
+                  box-shadow: none;
+                }
+              }
+            }
+            &::before,
+            &::after {
+              left: -2px;
+            }
+          }
+        }
+
+        // hide the fist and last line
+        &:first-child p::before,
+        &:last-child p::after {
+          display: none;
+        }
+      }
+    }
+
+    .number-stages {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      background-color: $white;
+      color: $blueDark;
+      border: 4px solid $blueDark;
+      border-radius: 100%;
+      text-align: center;
+      font-size: 26px;
+      line-height: 26px;
+      padding: 5px;
+      font-family: $OpenSansSemibold;
+      outline: 5px solid $white;
+      &.last-stages{
+        border: 4px solid $green;
+      }
+      @media(min-width: 520px) {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+
+
   }
 }
