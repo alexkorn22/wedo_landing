@@ -527,3 +527,38 @@
 
   }
 }
+
+.when-result-seo {
+  margin-bottom: 100px;
+
+  .wrap-when-result {
+    margin-top: 60px;
+    background-image: url(../img/bg-gray.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 50%;
+
+    .img-when-result, .text-when-result {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px 0;
+      height: 100%;
+    }
+    .img-when-result {
+      max-width: 270px;
+      height: auto;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+    .text-when-result {
+      p {
+        margin: 0;
+        font-size: 24px;
+        line-height: 38px;
+      }
+    }
+  }
+}
