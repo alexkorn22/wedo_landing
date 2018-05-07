@@ -1,5 +1,8 @@
 .head-seo, .whom-seo, .we-do-seo, .features-seo, .result-seo, .our-garanties-seo, .stages-seo {
   margin-bottom: 170px;
+  @include media-breakpoint-down(sm){
+    margin-bottom: 100px;
+  }
 }
 
 .head-seo {
@@ -102,12 +105,25 @@
         font-size: 24px;
         line-height: 26px;
         margin: 20px 0;
+        flex-direction: column;
+        .h1_seo {
+          font-size: 170px;
+          margin: 0;
+          line-height: 140px;
+        }
+        .h1_text {
+          line-height: 26px;
+        }
       }
     }
     .bottom-line p{
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 16px;
+      line-height: 22px;
       width: 100%;
+      margin: 0;
+    }
+    .bottom-line .wrap-btn {
+      height: 70px;
     }
   }
 }
@@ -141,6 +157,31 @@
       }
     }
   }
+
+  @include media-breakpoint-down(sm){
+    .content {
+      margin-top: 40px;
+      .text {
+        ul {
+          text-align: left;
+          list-style-type: circle;
+          padding-left: 20px;
+          li {
+            font-size: 16px;
+            margin: 0 0 10px 0;
+          }
+        }
+      }
+      .image {
+        width: 100%;
+        img {
+          max-width: 400px;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
 }
 
 
@@ -165,6 +206,24 @@
         line-height: 22px;
         margin: 0;
         max-width: 400px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    .items {
+      margin-top: 40px;
+
+      .item {
+        margin-bottom: 15px;
+        .icon {
+          max-width: 30px;
+          width: 100%;
+        }
+        .text {
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
     }
   }
@@ -203,13 +262,23 @@
       }
     }
   }
+
+  @include media-breakpoint-down(sm){
+    .tiles {
+      margin-top: 40px;
+      .tile {
+        margin-bottom: 5px;
+      }
+    }
+  }
 }
 
 
 .result-seo {
 
   .list-button {
-    margin: 60px 0 20px 0;
+    margin-top: 60px;
+    margin-bottom: 20px;
 
     .btn_arrow {
       background-color: transparent;
@@ -336,6 +405,21 @@
             line-height: 18px;
             padding: 0 10px;
           }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    margin-top: 40px;
+  }
+  @include media-breakpoint-down(xs){
+    .list-button {
+      .btn_arrow {
+        width: 130px;
+        font-size: 16px;
+        .arrow {
+          display: none;
         }
       }
     }
