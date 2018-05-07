@@ -1,5 +1,20 @@
 $( document ).ready(function() {
 
+//блок результаты seo. переключение между слайдами
+    $(".result-seo .btn_arrow.first-btn").on('click', function () {
+        $(this).addClass('active-button');
+        $(".result-seo .btn_arrow.second-btn").removeClass('active-button');
+        $('.result-content.first-slide').css('display', 'block');
+        $('.result-content.second-slide').css('display', 'none');
+    });
+    $(".result-seo .btn_arrow.second-btn").on('click', function () {
+        $(this).addClass('active-button');
+        $(".result-seo .btn_arrow.first-btn").removeClass('active-button');
+        $('.result-content.second-slide').css('display', 'block');
+        $('.result-content.first-slide').css('display', 'none');
+    });
+
+
 //аккордион, контекстная реклама. десктоп
     $(".s-accordion .panel").on('click', function() {
         var $this = $(this);
