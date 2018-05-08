@@ -160,4 +160,120 @@ if((isset($_POST['phone-freecalc'])&&$_POST['phone-freecalc']!="")){//Прове
 
 }
 
+if((isset($_POST['name-free-audit'])&&$_POST['name-free-audit']!="")&&(isset($_POST['phone-free-audit'])&&$_POST['phone-free-audit']!="")&&(isset($_POST['site-free-audit'])&&$_POST['site-free-audit']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
+    $to = 'sergeydem24@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $subject = 'WeDo SEO. Бесплатный экспресс-аудит'; //Загаловок сообщения
+    $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name-free-audit'].'</p>
+                        <p>Телефон: '.$_POST['phone-free-audit'].'</p>
+                        <p>Сайт: '.$_POST['site-free-audit'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+    $send = mail($to, $subject, $message, $headers);
+
+//    $message = '<b>WeDo SEO. Бесплатный экспресс-аудит </b>'. "\n";
+//    $message .= '<b>Имя: </b>'.$_POST['name-free-audit'] . "\n";
+//    $message .= '<b>Телефон: </b>'.$_POST['phone-free-audit'] . "\n";
+//    $message .= '<b>Сайт: </b>'.$_POST['site-free-audit'] . "\n";
+//
+//    require 'Telegram.php';
+//    $tg = new Telegram();
+//    $tg->sendMessage($message);
+
+}
+
+if((isset($_POST['name-same'])&&$_POST['name-same']!="")&&(isset($_POST['phone-same'])&&$_POST['phone-same']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
+    $to = 'sergeydem24@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $subject = 'WeDo SEO. Заказ SEO-продвижения'; //Загаловок сообщения
+    $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name-same'].'</p>
+                        <p>Телефон: '.$_POST['phone-same'].'</p>
+                        <p>Сайт: '.$_POST['site-same'].'</p>
+                        <p>Опишите проблему: '.$_POST['comment-same'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+    $send = mail($to, $subject, $message, $headers);
+
+//    $message = '<b>WeDo SEO. Заказ SEO-продвижения </b>'. "\n";
+//    $message .= '<b>Имя: </b>'.$_POST['name-same'] . "\n";
+//    $message .= '<b>Телефон: </b>'.$_POST['phone-same'] . "\n";
+//    $message .= '<b>Сайт: </b>'.$_POST['site-same'] . "\n";
+//    $message .= '<b>Опишите проблему: </b>'.$_POST['comment-same'] . "\n";
+//
+//    require 'Telegram.php';
+//    $tg = new Telegram();
+//    $tg->sendMessage($message);
+
+}
+
+if((isset($_POST['name-order-promotion'])&&$_POST['name-order-promotion']!="")&&(isset($_POST['phone-order-promotion'])&&$_POST['phone-order-promotion']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
+    $to = 'sergeydem24@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $subject = 'WeDo SEO. Заказ SEO-продвижения сайта'; //Загаловок сообщения
+    $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name-order-promotion'].'</p>
+                        <p>Телефон: '.$_POST['phone-order-promotion'].'</p>
+                        <p>Сайт: '.$_POST['site-order-promotion'].'</p>
+                        <p>Опишите проблему: '.$_POST['comment-order-promotion'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+    $send = mail($to, $subject, $message, $headers);
+
+//    $message = '<b>WeDo SEO. Заказ SEO-продвижения </b>'. "\n";
+//    $message .= '<b>Имя: </b>'.$_POST['name-order-promotion'] . "\n";
+//    $message .= '<b>Телефон: </b>'.$_POST['phone-order-promotion'] . "\n";
+//    $message .= '<b>Сайт: </b>'.$_POST['site-order-promotion'] . "\n";
+//    $message .= '<b>Опишите проблему: </b>'.$_POST['comment-order-promotion'] . "\n";
+//
+//    require 'Telegram.php';
+//    $tg = new Telegram();
+//    $tg->sendMessage($message);
+
+}
+
+if((isset($_POST['name-order-consultation'])&&$_POST['name-order-consultation']!="")&&(isset($_POST['phone-order-consultation'])&&$_POST['phone-order-consultation']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
+    $to = 'sergeydem24@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $subject = 'WeDo SEO. Заказ обратного звонка'; //Загаловок сообщения
+    $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name-order-consultation'].'</p>
+                        <p>Телефон: '.$_POST['phone-order-consultation'].'</p>
+                        <p>Сайт: '.$_POST['site-order-consultation'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+    $send = mail($to, $subject, $message, $headers);
+
+//    $message = '<b>WeDo SEO. Заказ обратного звонка </b>'. "\n";
+//    $message .= '<b>Имя: </b>'.$_POST['name-order-consultation'] . "\n";
+//    $message .= '<b>Телефон: </b>'.$_POST['phone-order-consultation'] . "\n";
+//    $message .= '<b>Сайт: </b>'.$_POST['site-order-consultation'] . "\n";
+//
+//    require 'Telegram.php';
+//    $tg = new Telegram();
+//    $tg->sendMessage($message);
+
+}
+
 ?>
