@@ -1,5 +1,20 @@
 $( document ).ready(function() {
 
+//блок результаты seo. переключение между слайдами
+    $(".result-seo .btn_arrow.first-btn").on('click', function () {
+        $(this).addClass('active-button');
+        $(".result-seo .btn_arrow.second-btn").removeClass('active-button');
+        $('.result-content.first-slide').css('display', 'block');
+        $('.result-content.second-slide').css('display', 'none');
+    });
+    $(".result-seo .btn_arrow.second-btn").on('click', function () {
+        $(this).addClass('active-button');
+        $(".result-seo .btn_arrow.first-btn").removeClass('active-button');
+        $('.result-content.second-slide').css('display', 'block');
+        $('.result-content.first-slide').css('display', 'none');
+    });
+
+
 //аккордион, контекстная реклама. десктоп
     $(".s-accordion .panel").on('click', function() {
         var $this = $(this);
@@ -46,6 +61,58 @@ $( document ).ready(function() {
             },
             1000:{
                 items:1
+            }
+        }
+    });
+
+//слайдер графиков
+    $('.chart-slider1').owlCarousel({
+        loop:true, //Зацикливаем слайдер
+        margin:50, //Отступ от картино если выводите больше 1
+        autoplay:false, //Автозапуск слайдера
+        smartSpeed:2000, //Время движения слайда
+        autoplayTimeout:7000, //Время смены слайда
+        dots: false,
+        nav: true,
+        navText: ["<img src='../img/Arrows-Back-icon.png'>","<img src='../img/Arrows-Back-icon.png'>"],
+        responsive:{ //Адаптация в зависимости от разрешения экрана
+            0:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            600:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            1000:{
+                items:3
+            }
+        }
+    });
+    $('.chart-slider2').owlCarousel({
+        loop:true, //Зацикливаем слайдер
+        margin:50, //Отступ от картино если выводите больше 1
+        autoplay:false, //Автозапуск слайдера
+        smartSpeed:2000, //Время движения слайда
+        autoplayTimeout:7000, //Время смены слайда
+        dots: false,
+        nav: true,
+        navText: ["<img src='../img/Arrows-Back-icon.png'>","<img src='../img/Arrows-Back-icon.png'>"],
+        responsive:{ //Адаптация в зависимости от разрешения экрана
+            0:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            600:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            1000:{
+                items:3
             }
         }
     });
@@ -124,7 +191,7 @@ $( document ).ready(function() {
 //Аякс отправка форм
 //Документация: http://api.jquery.com/jquery.ajax/
 // var formArr = ['order-kr-form','callback-form-kr','discover-form', 'freecalc-kr-form', 'callback-form'];
-    var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr', 'modal-freecalc-kr', 'myModal'];
+    var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr', 'modal-freecalc-kr', 'myModal', 'modal-free-audit-seo', 'modal-order-promotion-seo1', 'modal-order-promotion-seo2', 'modal-order-consultation-seo'];
     formArrModal.forEach(function (elem) {
         var singleFotm = $('#'+ elem).find('form');
         var _modal =  $('#'+ elem);
