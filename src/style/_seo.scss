@@ -113,6 +113,7 @@
         }
         .h1_text {
           line-height: 26px;
+          max-width: 295px;
         }
       }
     }
@@ -344,6 +345,7 @@
           margin: 0;
           font-size: 26px;
           font-family: $OpenSansRegular;
+          line-height: 28px;
           .name-of-site {
             color: $green;
           }
@@ -412,7 +414,7 @@
   }
 
   .chart-slider1, .chart-slider2 {
-    padding: 20px 0;
+    //padding: 20px 0;
     //owl dot
     .owl-dot {
       background: $blueDark;
@@ -431,9 +433,9 @@
     }
     .owl-dots {
       display: flex;
-      height: 20px;
+      //height: 20px;
       justify-content: center;
-      margin-top: 20px;
+      //margin-top: 20px;
     }
 
     .owl-prev,
@@ -463,7 +465,13 @@
     margin-top: 40px;
     .result-content {
       .cont-line {
-        padding: 20px 0;
+        &:nth-of-type(1){
+          padding: 20px 0 0 0;
+        }
+        &:nth-of-type(3){
+          padding: 0 0 20px 0;
+        }
+
 
         .detailed-text {
           .title {
@@ -538,9 +546,14 @@
       .item {
         padding: 0;
         margin-bottom: 20px;
+        display: flex;
         .img-item {
-          margin-bottom: 5px;
+          margin-right: 10px;
           max-width: 30px;
+          img {
+            width: 30px;
+            height: 30px;
+          }
         }
         .text-item {
           p {
@@ -577,11 +590,13 @@
             flex-direction: column;
             font-family: $OpenSansRegular;
             margin-top: 5px;
+            text-align: center;
             span {
               font-size: 14px;
               line-height: 18px;
               font-family: $OpenSansLight;
               margin-top: 5px;
+              text-align: left;
             }
           }
         }
@@ -635,6 +650,7 @@
               padding: 15px;
               box-shadow: 0 6px 20px 0 rgba($black, 0.1);
               transition: 0.3s;
+              text-align: right;
               span {
                 font-family: $OpenSansLight;
                 font-size: 16px;
@@ -642,6 +658,7 @@
                 margin-top: 5px;
                 box-shadow: none;
                 padding: 0;
+                text-align: right;
               }
               &:hover {
                 box-shadow: 0 8px 20px 0 rgba($black, 0.12);
@@ -673,6 +690,7 @@
               padding: 15px;
               box-shadow: 0 6px 20px 0 rgba($black, 0.2);
               transition: 0.3s;
+              text-align: left;
               span {
                 font-family: $OpenSansLight;
                 font-size: 16px;
@@ -680,6 +698,7 @@
                 margin-top: 5px;
                 box-shadow: none;
                 padding: 0;
+                text-align: left;
               }
               &:hover {
                 box-shadow: 0 8px 20px 0 rgba($black, 0.22);
@@ -705,7 +724,7 @@
 
 
     .number-stages {
-      display: inline-block;
+      //display: inline-block;
       width: 45px;
       height: 45px;
       background-color: $white;
@@ -718,6 +737,10 @@
       padding: 5px;
       font-family: $OpenSansSemibold;
       outline: 5px solid $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
       &.last-stages{
         border: 4px solid $green;
       }
