@@ -1,4 +1,4 @@
-.head-smm, .whom-smm {
+.head-smm, .whom-smm, .advantage-smm, .result-smm, .guarantees-smm {
   margin-bottom: 170px;
 }
 
@@ -103,6 +103,7 @@
   .content-section {
     margin-top: 60px;
     .wrap-block {
+      padding: 0 20px;
       p {
         margin: 5px 0 5px 0;
         line-height: 22px;
@@ -115,3 +116,53 @@
   }
 }
 
+.advantage-smm {
+  .content-section {
+    margin-top: 60px;
+    .wrap-block {
+      padding: 0 15px;
+      .img {
+        max-width: 70px;
+        width: auto;
+        img {
+          height: 60px;
+          width: auto;
+        }
+      }
+      .title-block {
+        margin: 7px 0 7px 0;
+        font-family: $OpenSansSemibold;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .descr {
+        margin: 7px 0 7px 0;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+.result-smm {}
+
+.guarantees-smm {
+  .content-section {
+    margin-top: 60px;
+    .wrap-block {
+      text-align: center;
+      padding: 0 20px;
+      img {
+        height: 50px;
+        width: auto;
+        margin-bottom: 7px;
+      }
+      p {
+        margin: 10px 0;
+        padding: 0 45px;
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+  }
+}
