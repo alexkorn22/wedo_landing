@@ -73,6 +73,9 @@
     }
   }
 
+  @include media-breakpoint-down(md){
+    background-image: url(../img/bg-head-smm_mob.jpg);
+  }
   @include media-breakpoint-down(sm){
     margin-bottom: 90px;
     background-image: url(../img/bg-head-smm_mob.jpg);
@@ -341,9 +344,12 @@
     .slider-result-smm {
       .item {
         .wrap-slid {
+          min-height: 370px;
           .wrap-descr {
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0,0,0,0.5);
             max-width: 100%;
+            min-height: 370px;
+            padding: 20px 15px 20px 15px;
           }
         }
       }
