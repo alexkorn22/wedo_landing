@@ -74,6 +74,7 @@ $( document ).ready(function() {
         autoplayTimeout:7000, //Время смены слайда
         dots: false,
         nav: true,
+        autoHeight:true,
         navText: ["<img src='../img/Arrows-Back-icon.png'>","<img src='../img/Arrows-Back-icon.png'>"],
         responsive:{ //Адаптация в зависимости от разрешения экрана
             0:{
