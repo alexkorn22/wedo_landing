@@ -295,20 +295,20 @@
 .result-seo {
 
   .list-button {
-    margin-top: 60px;
     margin-bottom: 20px;
 
     .btn_arrow {
       background-color: transparent;
-      border: 4px solid $green;
-      border-radius: 4px;
+      border: 1px solid $bgHead;
+      border-radius: 5px;
       width: 165px;
       height: 60px;
-      font-family: $OpenSansSemibold;
+      font-family: $OpenSansLight;
       font-size: 18px;
-      color: $green;
+      color: $bgHead;
       position: relative;
       outline: none;
+      transition: 0.2s;
       
       .arrow {
         background-image: url(../img/icons/long-arrow-green.png);
@@ -323,6 +323,7 @@
 
       &:hover {
         background-color: $green;
+        border-color: $green;
         color: $white;
         cursor: pointer;
         .arrow {
@@ -333,11 +334,47 @@
 
       &.active-button {
         background-color: $green;
+        border: 4px solid $green;
         color: $white;
         cursor: pointer;
+        font-family: $OpenSansSemibold;
         .arrow {
           background-image: url(../img/icons/long-arrow-white.png);
           right: 0.2%;
+        }
+        &::after {
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+          border-color: rgba(136, 183, 213, 0);
+          border-width: 15px;
+          right: 40%;
+        }
+      }
+    }
+
+    &_bottom {
+      margin-top: 15px;
+      .btn_arrow {
+        &.active-button {
+          &::after{
+            border-bottom-color: $green;
+            bottom: 100%;
+          }
+        }
+      }
+    }
+    &_top {
+      margin-top: 60px;
+      .btn_arrow {
+        &.active-button {
+          &::after{
+            border-top-color: $green;
+            top: 100%;
+          }
         }
       }
     }
