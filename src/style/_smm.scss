@@ -141,6 +141,22 @@
       }
     }
   }
+  @include media-breakpoint-down(md){
+    .content-section {
+      .wrap-block {
+        padding: 0;
+        margin-bottom: 20px;
+        img {
+          width: auto;
+          height: 25px;
+          max-width: none;
+          &:nth-of-type(2){
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .advantage-smm {
@@ -192,6 +208,14 @@
           font-size: 14px;
           line-height: 20px;
         }
+      }
+    }
+  }
+  @include media-breakpoint-down(md){
+    .content-section {
+      .wrap-block {
+        padding: 0;
+        margin-bottom: 25px;
       }
     }
   }
@@ -347,6 +371,18 @@
         }
       }
     }
+    @include media-breakpoint-down(md){
+      .slider-result-smm {
+        .item {
+          .wrap-slid {
+            .wrap-descr {
+              background-color: rgba(0,0,0,0.4);
+              max-width: 100%;
+            }
+          }
+        }
+      }
+  }
 }
 
 .guarantees-smm {
@@ -382,6 +418,22 @@
           padding: 0 20px;
           font-size: 16px;
           line-height: 20px;
+          margin: 5px 0 20px 0;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(md){
+    .content-section {
+      .wrap-block {
+        padding: 0;
+        img {
+          height: 40px;
+          margin-bottom: 0;
+        }
+        p {
+          padding: 0;
+
           margin: 5px 0 20px 0;
         }
       }
