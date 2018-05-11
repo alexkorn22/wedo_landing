@@ -1,5 +1,8 @@
 .head-smm, .whom-smm, .advantage-smm, .result-smm, .guarantees-smm {
   margin-bottom: 170px;
+  @include media-breakpoint-down(sm){
+    margin-bottom: 100px;
+  }
 }
 
 .head-smm {
@@ -114,6 +117,30 @@
       }
     }
   }
+
+  @include media-breakpoint-down(sm){
+    .content-section {
+      margin-top: 40px;
+      .wrap-block {
+        padding: 0;
+        margin-bottom: 20px;
+        p {
+          font-size: 14px;
+          line-height: 20px;
+          margin: 5px 0 0 0;
+        }
+        img {
+          width: auto;
+          height: 20px;
+          max-width: none;
+          &:nth-of-type(2){
+            height: 12px;
+          }
+
+        }
+      }
+    }
+  }
 }
 
 .advantage-smm {
@@ -139,6 +166,32 @@
         margin: 7px 0 7px 0;
         font-size: 16px;
         line-height: 22px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    .content-section {
+      margin-top: 40px;
+      .wrap-block {
+        padding: 0;
+        margin-bottom: 20px;
+        .img {
+          max-width: 70px;
+          margin: auto;
+          img {
+            height: 45px;
+          }
+        }
+        .title-block {
+          font-size: 16px;
+          line-height: 22px;
+          text-align: center;
+        }
+        .descr {
+          font-size: 14px;
+          line-height: 20px;
+        }
       }
     }
   }
@@ -260,28 +313,33 @@
     }
 
     @include media-breakpoint-down(sm){
-      margin-bottom: 90px;
       .slider-result-smm {
         margin-top: 40px;
-        margin-bottom: 5px;
+        margin-bottom: 0;
         padding-top: 0;
         .item {
           .wrap-slid {
+            min-height: 590px;
             .wrap-descr {
-              padding-left: 15px;
-              background-color: rgba(0,0,0,0.35);
+              padding: 15px;
+              background-color: rgba(0,0,0,0.55);
               max-width: 100%;
+              min-height: 590px;
               .title {
-                font-size: 18px;
-                line-height: 20px;
+                font-size: 16px;
+                line-height: 18px;
               }
-
               .details {
-                font-size: 15px;
-                line-height: 20px;
-                ul {
-                  padding-left: 20px;
-                  margin: 0;
+                font-size: 14px;
+                line-height: 18px;
+                .title-list {
+                  font-size: 14px;
+                  line-height: 18px;
+                  margin-top: 12px;
+                }
+                .list {
+                  font-size: 14px;
+                  line-height: 18px;
                 }
               }
             }
@@ -307,6 +365,25 @@
         padding: 0 45px;
         font-size: 20px;
         line-height: 26px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    .content-section {
+      margin-top: 40px;
+      .wrap-block {
+        padding: 0 10px;
+        img {
+          height: 30px;
+          margin-bottom: 0;
+        }
+        p {
+          padding: 0 20px;
+          font-size: 16px;
+          line-height: 20px;
+          margin: 5px 0 20px 0;
+        }
       }
     }
   }
