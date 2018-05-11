@@ -3,12 +3,16 @@ $( document ).ready(function() {
 //блок результаты seo. переключение между слайдами
     $(".result-seo .btn_arrow.first-btn").on('click', function () {
         $(this).addClass('active-button');
+        $(this).parent().addClass('order-first');
         $(".result-seo .btn_arrow.second-btn").removeClass('active-button');
+        $(".result-seo .btn_arrow.second-btn").parent().removeClass('order-first');
         $('.result-content.first-slide').css('display', 'block');
         $('.result-content.second-slide').css('display', 'none');
     });
     $(".result-seo .btn_arrow.second-btn").on('click', function () {
         $(this).addClass('active-button');
+        $(this).parent().addClass('order-first');
+        $(".result-seo .btn_arrow.first-btn").parent().removeClass('order-first');
         $(".result-seo .btn_arrow.first-btn").removeClass('active-button');
         $('.result-content.second-slide').css('display', 'block');
         $('.result-content.first-slide').css('display', 'none');
