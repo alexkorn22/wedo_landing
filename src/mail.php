@@ -277,7 +277,7 @@ if((isset($_POST['name-order-consultation'])&&$_POST['name-order-consultation']!
 }
 
 if((isset($_POST['name-discover-smm'])&&$_POST['name-discover-smm']!="")&&(isset($_POST['phone-discover-smm'])&&$_POST['phone-discover-smm']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
-    $to = 'sergeydem24@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
     $subject = 'WeDo SMM. Узнать'; //Загаловок сообщения
     $message = '
                 <html>
@@ -294,20 +294,20 @@ if((isset($_POST['name-discover-smm'])&&$_POST['name-discover-smm']!="")&&(isset
     $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
     $send = mail($to, $subject, $message, $headers);
 
-//    $message = '<b>WeDo SMM. Узнать </b>'. "\n";
-//    $message .= '<b>Имя: </b>'.$_POST['name-discover-smm'] . "\n";
-//    $message .= '<b>Телефон: </b>'.$_POST['phone-discover-smm'] . "\n";
-//    $message .= '<b>Сайт: </b>'.$_POST['site-discover-smm'] . "\n";
-//    $message .= '<b>Сфера бизнеса: </b>'.$_POST['busines-discover-smm'] . "\n";
-//
-//    require 'Telegram.php';
-//    $tg = new Telegram();
-//    $tg->sendMessage($message);
+    $message = '<b>WeDo SMM. Узнать </b>'. "\n";
+    $message .= '<b>Имя: </b>'.$_POST['name-discover-smm'] . "\n";
+    $message .= '<b>Телефон: </b>'.$_POST['phone-discover-smm'] . "\n";
+    $message .= '<b>Сайт: </b>'.$_POST['site-discover-smm'] . "\n";
+    $message .= '<b>Сфера бизнеса: </b>'.$_POST['busines-discover-smm'] . "\n";
+
+    require 'Telegram.php';
+    $tg = new Telegram();
+    $tg->sendMessage($message);
 
 }
 
 if((isset($_POST['name-same-smm'])&&$_POST['name-same-smm']!="")&&(isset($_POST['phone-same-smm'])&&$_POST['phone-same-smm']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
-    $to = 'sergeydem24@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
     $subject = 'WeDo SMM. Хочу так же'; //Загаловок сообщения
     $message = '
                 <html>
@@ -324,19 +324,19 @@ if((isset($_POST['name-same-smm'])&&$_POST['name-same-smm']!="")&&(isset($_POST[
     $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
     $send = mail($to, $subject, $message, $headers);
 
-//    $message = '<b>WeDo SMM. Хочу так же </b>'. "\n";
-//    $message .= '<b>Имя: </b>'.$_POST['name-same-smm'] . "\n";
-//    $message .= '<b>Телефон: </b>'.$_POST['phone-same-smm'] . "\n";
-//    $message .= '<b>Комментарий: </b>'.$_POST['comment-same-smm'] . "\n";
-//
-//    require 'Telegram.php';
-//    $tg = new Telegram();
-//    $tg->sendMessage($message);
+    $message = '<b>WeDo SMM. Хочу так же </b>'. "\n";
+    $message .= '<b>Имя: </b>'.$_POST['name-same-smm'] . "\n";
+    $message .= '<b>Телефон: </b>'.$_POST['phone-same-smm'] . "\n";
+    $message .= '<b>Комментарий: </b>'.$_POST['comment-same-smm'] . "\n";
+
+    require 'Telegram.php';
+    $tg = new Telegram();
+    $tg->sendMessage($message);
 
 }
 
 if((isset($_POST['name-order-consult-smm'])&&$_POST['name-order-consult-smm']!="")&&(isset($_POST['phone-order-consult-smm'])&&$_POST['phone-order-consult-smm']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
-    $to = 'sergeydem24@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
     $subject = 'WeDo SMM. Закзать контсультацию'; //Загаловок сообщения
     $message = '
                 <html>
@@ -353,14 +353,14 @@ if((isset($_POST['name-order-consult-smm'])&&$_POST['name-order-consult-smm']!="
     $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
     $send = mail($to, $subject, $message, $headers);
 
-//    $message = '<b>WeDo SMM. Закзать контсультацию </b>'. "\n";
-//    $message .= '<b>Имя: </b>'.$_POST['name-order-consult-smm'] . "\n";
-//    $message .= '<b>Телефон: </b>'.$_POST['phone-order-consult-smm'] . "\n";
-//    $message .= '<b>Комментарий: </b>'.$_POST['comment-order-consult-smm'] . "\n";
-//
-//    require 'Telegram.php';
-//    $tg = new Telegram();
-//    $tg->sendMessage($message);
+    $message = '<b>WeDo SMM. Закзать контсультацию </b>'. "\n";
+    $message .= '<b>Имя: </b>'.$_POST['name-order-consult-smm'] . "\n";
+    $message .= '<b>Телефон: </b>'.$_POST['phone-order-consult-smm'] . "\n";
+    $message .= '<b>Комментарий: </b>'.$_POST['comment-order-consult-smm'] . "\n";
+
+    require 'Telegram.php';
+    $tg = new Telegram();
+    $tg->sendMessage($message);
 
 }
 
