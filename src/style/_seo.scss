@@ -1,4 +1,4 @@
-.head-seo, .whom-seo, .we-do-seo, .features-seo, .result-seo, .our-garanties-seo, .stages-seo {
+.head-seo, .whom-seo, .we-do-seo, .features-seo, .result-seo, .our-garanties-seo, .stages-seo, .when-result-seo {
   margin-bottom: 170px;
   @include media-breakpoint-down(sm){
     margin-bottom: 100px;
@@ -807,7 +807,6 @@
 }
 
 .when-result-seo {
-  margin-bottom: 100px;
 
   .wrap-when-result {
     margin-top: 60px;

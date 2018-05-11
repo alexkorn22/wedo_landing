@@ -128,6 +128,36 @@ if((isset($_POST['phone-order-kr'])&&$_POST['phone-order-kr']!="")){//Прове
 
 
 
+if((isset($_POST['name-free-cosult-kr'])&&$_POST['name-free-cosult-kr']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
+    $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $subject = 'WeDo Контекстная реклама. Бесплатная консультация'; //Загаловок сообщения
+    $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name-free-cosult-kr'].'</p>
+                        <p>Телефон: '.$_POST['phone-free-cosult-kr'].'</p>
+                        <p>Комментарий: '.$_POST['comment-free-cosult-kr'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+    $send = mail($to, $subject, $message, $headers);
+
+    $message = '<b>WeDo Контекстная реклама. Бесплатная консультация </b>'. "\n";
+    $message .= '<b>Имя: </b>'.$_POST['name-free-cosult-kr'] . "\n";
+    $message .= '<b>Телефон: </b>'.$_POST['phone-free-cosult-kr'] . "\n";
+    $message .= '<b>Комментарий: </b>'.$_POST['comment-free-cosult-kr'] . "\n";
+
+    require 'Telegram.php';
+    $tg = new Telegram();
+    $tg->sendMessage($message);
+
+}
+
+
+
 if((isset($_POST['phone-freecalc'])&&$_POST['phone-freecalc']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
     $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
     $subject = 'WeDo Контекстная реклама. Заказать бесплатный расчёт'; //Загаловок сообщения
