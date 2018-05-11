@@ -65,6 +65,32 @@ $( document ).ready(function() {
         }
     });
 
+//слайдер другие методы
+    $('.slider-other-mathods').owlCarousel({
+        nav: false,
+        dots: true,
+        responsive:{
+            0:{
+                loop: true,
+                items: 1
+            },
+            600:{
+                margin: 10,
+                loop: true,
+                items: 2
+            },
+            1000:{
+                dots: false,
+                margin: 10,
+                loop: false,
+                items: 2,
+                mouseDrag: false,
+                touchDrag: false,
+                pullDrag: false
+            }
+        }
+    });
+
 //слайдер работ в smm
     $('.slider-result-smm').owlCarousel({
         loop:true, //Зацикливаем слайдер

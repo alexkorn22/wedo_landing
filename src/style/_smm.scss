@@ -1,4 +1,4 @@
-.head-smm, .whom-smm, .advantage-smm, .result-smm, .guarantees-smm {
+.head-smm, .whom-smm, .advantage-smm, .result-smm, .guarantees-smm, .promotion {
   margin-bottom: 170px;
   @include media-breakpoint-down(sm){
     margin-bottom: 100px;
@@ -296,59 +296,15 @@
       }
     }
 
-    //owl dot
-    .owl-dot {
-      background: $white;
-      height: 12px;
-      width: 12px;
-      border-radius: 10px;
-      border: 1px solid $green;
-      margin: 0 3px;
-    }
-    .owl-dot.active {
-      background: $green;
-      height: 12px;
-      width: 12px;
-      border-radius: 10px;
-      border: 1px solid $green;
-    }
-    .owl-dots {
-      display: flex;
-      height: 20px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .owl-prev,
-    .owl-next {
-      position: absolute;
-      top: 50%;
-
-      img {
-        width: 20px;
-        height: 20px;
-      }
-    }
-    .owl-next {
-      right: -40px;
-
-      img {
-        transform: rotate(180deg);
-      }
-    }
-    .owl-prev {
-      left: -40px;
-    }
-
     @include media-breakpoint-down(md){
     .slider-result-smm {
       .item {
         .wrap-slid {
-          min-height: 370px;
+          min-height: 340px;
           .wrap-descr {
             background-color: rgba(0,0,0,0.5);
             max-width: 100%;
-            min-height: 370px;
+            min-height: 340px;
             padding: 20px 15px 20px 15px;
           }
         }
@@ -447,4 +403,106 @@
     }
   }
 
+}
+
+.promotion {
+  .other-mathods {
+    min-height: 420px;
+    .card-wrap {
+      display: flex;
+      justify-content: center;
+      @include media-breakpoint-down(md){
+        margin-top: 40px;
+      }
+      .link-to-other-page {
+        text-decoration: none;
+        color: inherit;
+        .card {
+          border: 1px solid $black;
+          border-radius: 0;
+          margin-top: 80px;
+          transition: all 0.5s ease;
+          max-width: 275px;
+          min-height: 331px;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 5px;
+          &:hover {
+            cursor: pointer;
+            margin-top: 70px;
+            @include media-breakpoint-down(md) {
+              margin-top: 0;
+            }
+          }
+          @include media-breakpoint-down(md){
+            margin-top: 0;
+          }
+          .title-card {
+            font-size: 60px;
+            color: $green;
+            text-align: center;
+            p {
+              margin: 0;
+            }
+          }
+          .description-card {
+            text-align: center;
+            font-size: 18px;
+          }
+        }
+      }
+
+    }
+  }
+  .wrap-btn {
+    padding-top: 70px;
+    @include media-breakpoint-down(sm) {
+      padding-top: 25px;
+    }
+  }
+}
+
+//owl dot
+.owl-dot {
+  background: $white;
+  height: 12px;
+  width: 12px;
+  border-radius: 10px;
+  border: 1px solid $green;
+  margin: 0 3px;
+}
+.owl-dot.active {
+  background: $green;
+  height: 12px;
+  width: 12px;
+  border-radius: 10px;
+  border: 1px solid $green;
+}
+.owl-dots {
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+.owl-next {
+  right: -40px;
+
+  img {
+    transform: rotate(180deg);
+  }
+}
+.owl-prev {
+  left: -40px;
 }
