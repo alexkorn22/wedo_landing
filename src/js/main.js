@@ -1,23 +1,30 @@
 $( document ).ready(function() {
 
+   function seoChangeButton(fisrt, second, slideOne, slideTwo) {
+       $('.btn_arrow'+fisrt).addClass('active-button').parent().addClass('order-first');
+       $('.result-seo .btn_arrow'+ second).removeClass('active-button').parent().removeClass('order-first');
+       $('.result-content'+slideOne).css('display', 'block');
+       $('.result-content'+slideTwo).css('display', 'none');
+   }
+
 //блок результаты seo. переключение между слайдами
     $(".result-seo .btn_arrow.first-btn").on('click', function () {
-        $(this).addClass('active-button');
-        $(this).parent().addClass('order-first');
-        $(".result-seo .btn_arrow.second-btn").removeClass('active-button');
-        $(".result-seo .btn_arrow.second-btn").parent().removeClass('order-first');
-        $('.result-content.first-slide').css('display', 'block');
-        $('.result-content.second-slide').css('display', 'none');
+        seoChangeButton('.first-btn', '.second-btn' , '.first-slide', '.second-slide');
     });
     $(".result-seo .btn_arrow.second-btn").on('click', function () {
-        $(this).addClass('active-button');
-        $(this).parent().addClass('order-first');
-        $(".result-seo .btn_arrow.first-btn").parent().removeClass('order-first');
-        $(".result-seo .btn_arrow.first-btn").removeClass('active-button');
-        $('.result-content.second-slide').css('display', 'block');
-        $('.result-content.first-slide').css('display', 'none');
+        seoChangeButton( '.second-btn','.first-btn', '.second-slide', '.first-slide');
     });
 
+// функция скролла к сео блокам
+    function goToByScroll(id){
+        $('html,body').animate({
+                scrollTop: $("#"+id).offset().top},
+            'slow');
+    }
+
+    $(".list-button_bottom .btn_arrow").on('click', function () {
+        goToByScroll('id-btn-seo');
+    });
 
 //аккордион, контекстная реклама. десктоп
     $(".s-accordion .panel").on('click', function() {
