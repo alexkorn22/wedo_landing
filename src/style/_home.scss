@@ -686,39 +686,52 @@ header {
         }
       }
       }
-      p {
-        font-size: 16px;
-        line-height: 22px;
-        @include media-breakpoint-up(sm){
-          font-size: 20px;
-          line-height: 27px;
-        }
-        &:first-child {
-          transform: rotate(-90deg);
-          font-size: 37px;
-          color: $pink;
-          font-family: $OpenSansExtra-Bold;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 6px;
-          height: 37px;
-          margin: 0;
-          left: 0px;
-          top: 23px;
-          position: absolute;
-          @include media-breakpoint-up(sm){
-            top: 32px;
-            font-size: 44px;
-            letter-spacing: 8px;
-          }
-         }
-        &:last-child {
-          margin-left: 60px;
-          @include media-breakpoint-up(sm){
-            margin-left: 70px;
+      .link-to-other-page {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          p {
+            &:first-child {
+              color: $orange;
+            }
           }
         }
-    }
+        p {
+          font-size: 16px;
+          line-height: 22px;
+          @include media-breakpoint-up(sm){
+            font-size: 20px;
+            line-height: 27px;
+            transition: 0.5s;
+          }
+          &:first-child {
+            transform: rotate(-90deg);
+            font-size: 37px;
+            color: $pink;
+            font-family: $OpenSansExtra-Bold;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            height: 37px;
+            margin: 0;
+            left: 0;
+            top: 23px;
+            position: absolute;
+            @include media-breakpoint-up(sm){
+              top: 32px;
+              font-size: 44px;
+              letter-spacing: 8px;
+            }
+          }
+          &:last-child {
+            margin-left: 60px;
+            @include media-breakpoint-up(sm){
+              margin-left: 70px;
+            }
+          }
+        }
+      }
+
   }
   .wrap-btn {
     .button {
@@ -1004,7 +1017,7 @@ footer {
   }
 }
 
-.modal-kr, .modal-seo {
+.modal-kr, .modal-seo, .modal-smm {
   .modal-content {
     border-radius: 4px;
     background-image: none;

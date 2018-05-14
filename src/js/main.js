@@ -1,19 +1,30 @@
 $( document ).ready(function() {
 
+   function seoChangeButton(fisrt, second, slideOne, slideTwo) {
+       $('.btn_arrow'+fisrt).addClass('active-button');
+       $('.result-seo .btn_arrow'+ second).removeClass('active-button');
+       $('.result-content'+slideOne).css('display', 'block');
+       $('.result-content'+slideTwo).css('display', 'none');
+   }
+
 //блок результаты seo. переключение между слайдами
     $(".result-seo .btn_arrow.first-btn").on('click', function () {
-        $(this).addClass('active-button');
-        $(".result-seo .btn_arrow.second-btn").removeClass('active-button');
-        $('.result-content.first-slide').css('display', 'block');
-        $('.result-content.second-slide').css('display', 'none');
+        seoChangeButton('.first-btn', '.second-btn' , '.first-slide', '.second-slide');
     });
     $(".result-seo .btn_arrow.second-btn").on('click', function () {
-        $(this).addClass('active-button');
-        $(".result-seo .btn_arrow.first-btn").removeClass('active-button');
-        $('.result-content.second-slide').css('display', 'block');
-        $('.result-content.first-slide').css('display', 'none');
+        seoChangeButton( '.second-btn','.first-btn', '.second-slide', '.first-slide');
     });
 
+// функция скролла к сео блокам
+    function goToByScroll(id){
+        $('html,body').animate({
+                scrollTop: $("#"+id).offset().top},
+            'slow');
+    }
+
+    $(".list-button_bottom .btn_arrow").on('click', function () {
+        goToByScroll('id-btn-seo');
+    });
 
 //аккордион, контекстная реклама. десктоп
     $(".s-accordion .panel").on('click', function() {
@@ -47,6 +58,60 @@ $( document ).ready(function() {
         autoplayTimeout:7000, //Время смены слайда
         dots: false,
         nav: true,
+        navText: ["<img src='../img/Arrows-Back-icon.png'>","<img src='../img/Arrows-Back-icon.png'>"],
+        responsive:{ //Адаптация в зависимости от разрешения экрана
+            0:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            600:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            1000:{
+                items:1
+            }
+        }
+    });
+
+//слайдер другие методы
+    $('.slider-other-mathods').owlCarousel({
+        nav: false,
+        dots: true,
+        responsive:{
+            0:{
+                loop: true,
+                items: 1
+            },
+            600:{
+                margin: 10,
+                loop: true,
+                items: 2
+            },
+            1000:{
+                dots: false,
+                margin: 10,
+                loop: false,
+                items: 2,
+                mouseDrag: false,
+                touchDrag: false,
+                pullDrag: false
+            }
+        }
+    });
+
+//слайдер работ в smm
+    $('.slider-result-smm').owlCarousel({
+        loop:true, //Зацикливаем слайдер
+        margin:50, //Отступ от картино если выводите больше 1
+        autoplay:false, //Автозапуск слайдера
+        smartSpeed:2000, //Время движения слайда
+        autoplayTimeout:7000, //Время смены слайда
+        dots: false,
+        nav: true,
+        autoHeight:true,
         navText: ["<img src='../img/Arrows-Back-icon.png'>","<img src='../img/Arrows-Back-icon.png'>"],
         responsive:{ //Адаптация в зависимости от разрешения экрана
             0:{
@@ -191,7 +256,7 @@ $( document ).ready(function() {
 //Аякс отправка форм
 //Документация: http://api.jquery.com/jquery.ajax/
 // var formArr = ['order-kr-form','callback-form-kr','discover-form', 'freecalc-kr-form', 'callback-form'];
-    var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr', 'modal-freecalc-kr', 'myModal', 'modal-free-audit-seo', 'modal-order-promotion-seo1', 'modal-order-promotion-seo2', 'modal-order-consultation-seo'];
+    var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr','modal-free-cosult-kr', 'modal-freecalc-kr', 'myModal', 'modal-free-audit-seo', 'modal-order-promotion-seo1', 'modal-order-promotion-seo2', 'modal-order-consultation-seo', 'modal-discover-smm', 'modal-same-smm', 'modal-order-consultation-smm'];
     formArrModal.forEach(function (elem) {
         var singleFotm = $('#'+ elem).find('form');
         var _modal =  $('#'+ elem);
