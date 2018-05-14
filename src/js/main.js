@@ -1,8 +1,8 @@
 $( document ).ready(function() {
 
    function seoChangeButton(fisrt, second, slideOne, slideTwo) {
-       $('.btn_arrow'+fisrt).addClass('active-button').parent().addClass('order-first');
-       $('.result-seo .btn_arrow'+ second).removeClass('active-button').parent().removeClass('order-first');
+       $('.btn_arrow'+fisrt).addClass('active-button');
+       $('.result-seo .btn_arrow'+ second).removeClass('active-button');
        $('.result-content'+slideOne).css('display', 'block');
        $('.result-content'+slideTwo).css('display', 'none');
    }

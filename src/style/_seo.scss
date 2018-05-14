@@ -295,12 +295,10 @@
 .result-seo {
 
   .list-button {
-    margin-bottom: 20px;
 
     .btn_arrow {
       background-color: transparent;
-      border: 1px solid $bgHead;
-      border-radius: 5px;
+      border: 1px solid #134e56;
       width: 165px;
       height: 60px;
       font-family: $OpenSansLight;
@@ -322,9 +320,9 @@
       }
 
       &:hover {
-        background-color: $green;
-        border-color: $green;
-        color: $white;
+        //background-color: $green;
+        //border-color: $green;
+        //color: $white;
         cursor: pointer;
         .arrow {
           background-image: url(../img/icons/long-arrow-white.png);
@@ -333,8 +331,9 @@
       }
 
       &.active-button {
-        background-color: $green;
-        border: 4px solid $green;
+        background-color: #134e56;
+        //border: 4px solid $green;
+        border: 1px solid #134e56;
         color: $white;
         cursor: pointer;
         font-family: $OpenSansSemibold;
@@ -342,28 +341,26 @@
           background-image: url(../img/icons/long-arrow-white.png);
           right: 0.2%;
         }
-        &::after {
-          border: solid transparent;
-          content: " ";
-          height: 0;
-          width: 0;
-          position: absolute;
-          pointer-events: none;
-          border-color: rgba(136, 183, 213, 0);
-          border-width: 15px;
-          right: 40%;
-        }
+        //&::after {
+        //  border: solid transparent;
+        //  content: " ";
+        //  height: 0;
+        //  width: 0;
+        //  position: absolute;
+        //  pointer-events: none;
+        //  border-color: rgba(136, 183, 213, 0);
+        //  border-width: 15px;
+        //  right: 40%;
+        //}
       }
     }
 
     &_bottom {
-      margin-top: 15px;
       .btn_arrow {
+        border: 1px solid #0c2f40;
         &.active-button {
-          &::after{
-            border-bottom-color: $green;
-            bottom: 100%;
-          }
+          background-color: #0c2f40;
+          border: 1px solid #0c2f40;
         }
       }
     }
@@ -371,17 +368,13 @@
       margin-top: 60px;
       .btn_arrow {
         &.active-button {
-          &::after{
-            border-top-color: $green;
-            top: 100%;
-          }
         }
       }
     }
   }
   .result-content {
     min-height: 740px;
-    background-image: url(../img/bg-charts.png);
+    background-image: url(../img/bg-charts2.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
