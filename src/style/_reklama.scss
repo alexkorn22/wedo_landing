@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding: 20px 0 100px 0;
+    padding: 20px 0 50px 0;
   }
 
   .top-line {
@@ -99,6 +99,11 @@
       font-size: 18px;
       line-height: 24px;
       width: 100%;
+    }
+    .bottom-line {
+      .wrap-btn {
+        height: 50px;
+      }
     }
   }
 }
