@@ -77,7 +77,7 @@
         <div class="row wrap-btn align-items-center justify-content-center">
             <div class="col-12 col-xl-4">
                 <div class="button">
-                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#myModal" class="btn-pink"
+                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#free-consult-im" class="btn-pink"
                        data-wipe="Бесплатная консультация">Бесплатная консультация</a>
                 </div>
             </div>
@@ -231,7 +231,7 @@
         <div class="row wrap-btn align-items-center justify-content-center">
             <div class="col-12 col-xl-4">
                 <div class="button">
-                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#myModal" class="btn-pink"
+                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#free-consult-im" class="btn-pink"
                        data-wipe="Бесплатная консультация">Бесплатная консультация</a>
                 </div>
             </div>
@@ -698,7 +698,7 @@
             <div class="col-12">
                 <div class="wrap-btn">
                     <div class="button">
-                        <a href="#" ontouchstart="" data-toggle="modal" id="modalBtn" data-target="#myModal3" class="btn-pink"
+                        <a href="#" ontouchstart="" data-toggle="modal" id="modalBtn" data-target="#commercial-im" class="btn-pink"
                            data-wipe="Заказать коммерческое предложение">Заказать коммерческое предложение</a>
                     </div>
                 </div>
@@ -830,7 +830,7 @@
         <div class="row wrap-btn align-items-center justify-content-center">
             <div class="col-12 col-xl-4">
                 <div class="button">
-                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#myModal" class="btn-pink"
+                    <a href="#" ontouchstart="" data-toggle="modal" data-target="#free-consult-im" class="btn-pink"
                        data-wipe="Бесплатная консультация">Бесплатная консультация</a>
                 </div>
             </div>
@@ -855,7 +855,7 @@
 </footer>
 
 <!-- Modal -->
-<div class="modal call-us fade" id="myModal">
+<div class="modal call-us fade" id="free-consult-im">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="container-fluid">
@@ -868,7 +868,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-10">
-                        <h3 class="modal-title" id="exampleModalLabel">Укажите, пожалуйста, Ваши контактные данные, и мы предоставим Вам бесплатную консультацию</h3>
+                        <h3 class="modal-title">Укажите, пожалуйста, Ваши контактные данные, и мы предоставим Вам бесплатную консультацию</h3>
                     </div>
                 </div>
                 <div id="hidden-row" class="row">
@@ -877,20 +877,20 @@
                             <div class="card">
                                 <form id="callback-form">
                                     <div class="input-container">
-                                        <input type="text" id="Username" name="Username" required>
-                                        <label for="Username">Имя</label>
+                                        <input type="text" id="name-free-consult-im" name="name-free-consult-im" required>
+                                        <label for="name-free-consult-im">Имя</label>
                                         <div class="bar"></div>
                                     </div>
                                     <div class="input-container number">
-                                        <input class="form-control bfh-phone" type="text" id="Phone" value=""
-                                               name="Phone" data-format="+380 (dd) ddd-dd-dd" required>
-                                        <label for="Phone">Телефон</label>
+                                        <input class="form-control bfh-phone" type="text" id="phone-free-consult-im" value=""
+                                               name="phone-free-consult-im" data-format="+380 (dd) ddd-dd-dd" required>
+                                        <label for="phone-free-consult-im">Телефон</label>
                                         <div class="bar"></div>
                                     </div>
                                     <div id="errorMessage" style="display: none">Укажите Ваш телефон. (см. подсказку)</div>
                                     <div class="input-container">
-                                        <label for="comment">Комментарий</label>
-                                        <textarea id="comment" name="comment"></textarea>
+                                        <label for="comment-free-consult-im">Комментарий</label>
+                                        <textarea id="comment-free-consult-im" name="comment-free-consult-im"></textarea>
                                         <div class="bar"></div>
                                     </div>
                                     <div class="button-container">
@@ -898,7 +898,6 @@
                                             <div class="button">
                                                 <button type="submit" ontouchstart="" class="btn"
                                                         data-wipe="Отправить заявку">Отправить заявку</button>
-                                                <!--<a href="" id="submit-btn" class="btn-pink" data-wipe="Отправить заявку">Отправить заявку</a>-->
                                             </div>
                                         </div>
                                     </div>
@@ -911,7 +910,7 @@
         </div>
     </div>
 </div>
-<div class="modal commercial fade" id="myModal3">
+<div class="modal commercial fade" id="commercial-im">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="container-fluid">
@@ -924,7 +923,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-10">
-                        <h3 class="modal-title" id="exampleModalLabel">Укажите, пожалуйста, Ваши контактные данные, и мы предоставим Вам бесплатную консультацию</h3>
+                        <h3 class="modal-title">Укажите, пожалуйста, Ваши контактные данные, и мы предоставим Вам бесплатную консультацию</h3>
                     </div>
                 </div>
                 <div id="hidden-row" class="row">
@@ -961,9 +960,9 @@
                                             <div class="bar"></div>
                                         </div>
                                         <div class="input-container number">
-                                            <input class="form-control bfh-phone" type="text" id="Phone-com" value=""
-                                                   name="Phone-com" data-format="+380 (dd) ddd-dd-dd" required>
-                                            <label for="Phone-com">Телефон</label>
+                                            <input class="form-control bfh-phone" type="text" id="phone-com" value=""
+                                                   name="phone-com" data-format="+380 (dd) ddd-dd-dd" required>
+                                            <label for="phone-com">Телефон</label>
                                             <div class="bar"></div>
                                         </div>
                                         <div id="errorMessage2" style="display: none">Укажите Ваш телефон. (см. подсказку)</div>
@@ -973,7 +972,6 @@
                                             <div class="button">
                                                 <button type="submit" ontouchstart="" class="btn"
                                                         data-wipe="Отправить заявку">Отправить заявку</button>
-                                                <!--<a href="" id="submit-btn" class="btn-pink" data-wipe="Отправить заявку">Отправить заявку</a>-->
                                             </div>
                                         </div>
                                     </div>
@@ -986,7 +984,7 @@
         </div>
     </div>
 </div>
-<div class="modal thank-you fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal thank-you fade" id="modal-thank" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
