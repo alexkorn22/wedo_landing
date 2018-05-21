@@ -734,78 +734,69 @@
       }
     }
 
-
     /*-------------END tabs*/
+
+    /*Checkbox*/
+    .c-custom-check {
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      @include media-breakpoint-down(sm){
+        font-size: 14px;
+      }
+
+      input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+      input:required ~ .c-custom-check__indicator {
+        border: 1px solid $blue;
+      }
+      // Hover & checked
+      label:hover > input:checked ~ .c-custom-check__indicator,
+      input:focus:checked ~ .c-custom-check__indicator{
+        background: $blue;
+      }
+      input:required:valid ~ .c-custom-check__indicator {
+        border-color: transparent;
+      }
+      input:checked ~ .c-custom-check__indicator {
+        background: $blue;
+        &:after {
+          border-color: $white;
+        }
+      }
+    }
+    // Indicator (element that replaces the checkbox)
+    .c-custom-check__indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+
+      // Tick: transparent by default
+      &:after {
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        width: 8px;
+        height: 12px;
+        content: '';
+        border-style: solid;
+        border-color: transparent;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg)
+      }
+    }
+    /*END Checkbox*/
   }
 
   .clicked {
     background-color: rgba(68,125,152,.07) !important;
   }
-
-  /*Checkbox*/
-  .c-custom-check {
-    position: relative;
-    padding-left: 35px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    @include media-breakpoint-down(sm){
-      font-size: 14px;
-    }
-
-    input {
-      position: absolute;
-      z-index: -1;
-      opacity: 0;
-    }
-  }
-  // Indicator (element that replaces the checkbox)
-  .c-custom-check__indicator {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 20px;
-    height: 20px;
-
-    // Tick: transparent by default
-    &:after {
-      position: absolute;
-      left: 5px;
-      top: 1px;
-      width: 8px;
-      height: 12px;
-      content: '';
-      border-style: solid;
-      border-color: transparent;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg)
-    }
-
-    // Checked
-    input:checked ~ & {
-      background: $blue;
-
-      &:after {
-        border-color: $white;
-      }
-    }
-
-    // Hover & checked
-    label:hover > input:checked ~ &,
-    input:focus:checked ~ &{
-      background: $blue;
-    }
-
-    // Required
-    input:required ~ & {
-      border: 1px solid $blue;
-    }
-
-    // Required & checked
-    input:required:valid ~ & {
-      border-color: transparent;
-    }
-  }
-  /*END Checkbox*/
 
   /*tooltip*/
   .tooltip-inner {

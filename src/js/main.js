@@ -442,7 +442,139 @@ $( document ).ready(function() {
 //конец таблицы на стр ИМ
 
 
+    // Insert price into labels
+    var masPrice = [
+        {price: allOptions.main.light.price},
+        {price: allOptions.main.medium.price},
+        {price: allOptions.main.premium.price}
+    ];
 
+    $(".table-container-footer .price").each(function (index) {
+        $(this).text('$'+ masPrice[index].price);
+    });
+    $(".tab-content .price").each(function (index) {
+        $(this).find('p').text('$'+ masPrice[index].price);
+    });
+
+    // calculating total price and total time:
+    var checkBoxes =  $('input[type=checkbox]');
+    var options = {} ;
+    var totalPrice ;
+    var basePrice    = allOptions.main.light.price ;
+    var optionsPrice = 0 ;
+
+    var totalTime;
+    var baseTime    = allOptions.main.light.time  ;
+    var optionsTime = 0 ;
+    var tariffName ;
+
+    updateTariff('light');
+
+    $('[id="light"]').click(function(){
+        basePrice = allOptions.main.light.price;
+        baseTime  = allOptions.main.light.time;
+        updateTariff(this.id);
+        checkBoxes.change();
+        $('html, body').animate({
+            scrollTop: $("div.options").offset().top
+        }, 1000);
+    });
+
+    $('[id="medium"]').click(function(){
+        basePrice = allOptions.main.medium.price;
+        baseTime  = allOptions.main.medium.time;
+        checkBoxes.change();
+        updateTariff(this.id);
+        $('html, body').animate({
+            scrollTop: $("div.options").offset().top
+        }, 1000);
+    });
+
+    $('[id="premium"]').click(function(){
+        basePrice = allOptions.main.premium.price;
+        baseTime  = allOptions.main.premium.time;
+        checkBoxes.change();
+        updateTariff(this.id);
+        $('html, body').animate({
+            scrollTop: $("div.options").offset().top
+        }, 1000);
+
+    });
+
+    $('#modalBtn').click(function () {
+        checkBoxes.change();
+    });
+
+
+    checkBoxes.change(function() {
+        optionsPrice = 0;
+        optionsTime = 0 ;
+        $('input[type=checkbox]').each(function () {
+            if (this.checked) {
+                options[this.id] = this.name;
+                optionsPrice += allOptions['options'][this.id]['price'];
+                optionsTime  += allOptions['options'][this.id]['time']
+            }else{
+                if (typeof options[this.id] !== 'undefined') {
+                    delete options[this.id];
+                }
+            }
+        });
+
+        totalPrice = parseInt(basePrice) + parseInt(optionsPrice) ;
+        totalTime  = parseInt(baseTime)  + parseInt(optionsTime)  ;
+
+        updateTotalPriceAndTime(totalPrice,totalTime);
+        // update form data :
+        updateFormOptions(options);
+    });
+
+    function updateTotalPriceAndTime(totalPrice,totalTime){
+        // set price and time for the page :
+        $('#totalPrice').html('$'+totalPrice);
+        $('#totalPriceForm').html('$'+totalPrice);
+        var time = 'месяца' ;
+        if(totalTime == 1 ){
+            time = 'месяц';
+        }else if(totalTime>4){
+            time = 'месяцев' ;
+        }
+
+        // set time and price on the form :
+        $('#totalTime').html(totalTime+' '+time);
+        $('#totalTimeForm').html(totalTime+' '+time);
+
+        // change the value of the input field in the form :
+        $('#cost-val').val(totalPrice);
+        $('#date').val(totalTime+' '+time);
+
+    }
+
+    /* Записать данные, которые выбрал пользователь на форме */
+
+    function updateFormOptions(options){
+        var arrValues = Object.values(options);
+        var additionalOptions =  $('#additionalOptions');
+        additionalOptions.html(arrValues.join(';'));
+
+        // options input value :
+        $('#options').val(arrValues);
+    }
+
+    function updateTariff(id){
+        // update tariff on the form
+        tariffName = $('#'+id).attr('name');
+        $('#mainTariff').html(tariffName);
+
+        // tariff input value :
+        $('#tariff').val(tariffName);
+    }
+
+
+
+    /*Animation*/
+    $("#cost, #feature, #why-us, #promotion, #works").animated("slideInUp", "slideOutUp");
+    $(".options, .wrap-cost, .home-button").animated("slideInUp", "slideOutUp");
 
 
 
