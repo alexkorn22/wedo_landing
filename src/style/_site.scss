@@ -145,3 +145,82 @@
     }
   }
 }
+
+.examples-our-work {
+  .content-section {
+    margin-top: 70px;
+
+    .slider-work-site {
+      a {
+        text-decoration: none;
+      }
+      .item {
+        min-height: 300px;
+        width: 100%;
+        overflow: hidden;
+        .wrap-slid {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          min-height: 400px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          .wrap-descr {
+            padding-left: 20px;
+            width: 100%;
+            max-width: 500px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @include media-breakpoint-down(sm) {
+              background-color: rgba(0,0,0,0.2);
+              max-width: 100%;
+            }
+            p {
+              font-size: 18px;
+              width: 100%;
+              color: $white;
+              @include media-breakpoint-up(sm) {
+                font-size: 26px;
+                line-height: 32px;
+              }
+            }
+            .wrap-link {
+              p {
+                color: $white;
+                transition: 1s;
+                font-size: 20px;
+                &:hover {
+                  color: $blueLight;
+                }
+              }
+            }
+          }
+          &.slide1 {
+            background-image: url(../img/for_im/slide1.png);
+          }
+          &.slide2 {
+            background-image: url(../img/for_im/slide2.png);
+          }
+          &.slide3 {
+            background-image: url(../img/for_im/slide3.png);
+          }
+          &.slide4 {
+            background-image: url(../img/for_im/slide4.png);
+          }
+          &.slide5 {
+            background-image: url(../img/for_im/slide5.png);
+          }
+          &.slide6 {
+            background-image: url(../img/for_im/slide6.png);
+          }
+        }
+      }
+    }
+  }
+}
