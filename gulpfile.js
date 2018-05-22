@@ -178,5 +178,5 @@ gulp.task('watch', function(){
 });
 
 
- gulp.task('default', ['build', 'webserver', 'watch' ,'watch-static']);
-// gulp.task('default', ['build', 'webserver', 'watch']);
+  gulp.task('default', ['build', 'webserver', 'watch' ,'watch-static']);
+//gulp.task('default', ['build', 'webserver', 'watch']);
