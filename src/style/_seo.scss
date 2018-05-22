@@ -55,6 +55,15 @@
       &_smm {
         max-width: 500px;
       }
+      &__align-center {
+        text-align: center;
+        max-width: 800px;
+        .italic {
+          font-style: italic;
+          font-family: $OpenSansLight;
+          display: contents;
+        }
+      }
     }
   }
   @include media-breakpoint-down(sm){

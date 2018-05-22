@@ -30,14 +30,14 @@ var path = {
         html: 'src/**/**/*.html',
         js: 'src/js/*.js',
         style: 'src/style/main.scss',
-        img: 'src/img/**/*.*',
+        img: 'src/img/**/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
         html: 'src/**/**/*.html',
         js: 'src/js/**/*.js',
         style: 'src/style/**/*.scss',
-        img: 'src/img/**/*.*',
+        img: 'src/img/**/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     clean: './build'
@@ -178,5 +178,5 @@ gulp.task('watch', function(){
 });
 
 
- // gulp.task('default', ['build', 'webserver', 'watch' ,'watch-static']);
-gulp.task('default', ['build', 'webserver', 'watch']);
+ gulp.task('default', ['build', 'webserver', 'watch' ,'watch-static']);
+// gulp.task('default', ['build', 'webserver', 'watch']);
