@@ -376,8 +376,6 @@
     margin-top: 70px;
 
       .custom-table {
-        margin-top: 70px;
-        margin-bottom: 30px;
         width: 100%;
         border: 2px solid transparent;
         thead th {
@@ -467,6 +465,139 @@
         }
       }
 
+  }
+}
+
+.why-us-site {
+  .content-section {
+    margin-top: 70px;
+  }
+  .wrap-why-us {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    .item-fact {
+      display: flex;
+      justify-content: center;
+      min-width: 300px;
+      margin-bottom: 40px;
+      @include media-breakpoint-down(sm) {
+        justify-content: center;
+        margin-bottom: 50px;
+      }
+      .wrap-fact {
+        @include media-breakpoint-down(sm){
+          display: flex;
+          align-items: center;
+
+        }
+        .icon {
+          display: flex;
+          justify-content: center;
+          max-width: 50px;
+          margin: 0 auto;
+          @include media-breakpoint-down(sm){
+            max-width: 40px;
+          }
+          img {
+            filter: brightness(.5) grayscale(1);
+            transition: all 1s ease;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .text {
+          transition: all 1s ease;
+          p {
+            text-align: center;
+            max-width: 200px;
+            margin: 10px 0 0;
+            line-height: 22px;
+            @include media-breakpoint-down(sm) {
+              font-size: 15px;
+              text-align: left;
+              padding-left: 15px;
+              margin: 0;
+              line-height: 20px;
+            }
+          }
+        }
+        &:hover {
+          color: $blue;
+          .icon img{
+            filter: none;
+          }
+        }
+      }
+      &:nth-child(2){
+        .wrap-fact {
+          .icon {
+            max-width: 70px;
+            @include media-breakpoint-down(sm){
+              max-width: 55px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.promotion-site {
+  .all-card {
+    .card-wrap {
+      display: flex;
+      justify-content: center;
+      @include media-breakpoint-down(md){
+        margin-top: 25px;
+      }
+      .link-to-other-page {
+        text-decoration: none;
+        color: inherit;
+        .card {
+          border: 1px solid #f1f1f1;
+          border-radius: 0;
+          margin-top: 80px;
+          transition: all 0.5s ease;
+          max-width: 275px;
+          min-height: 331px;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 5px;
+          &:hover {
+            cursor: pointer;
+            margin-top: 70px;
+            box-shadow: 0px 4px 20px 0px rgba(0,0,0,.1);
+            @include media-breakpoint-down(md) {
+              margin-top: 0;
+            }
+          }
+          @include media-breakpoint-down(md){
+            margin-top: 0;
+          }
+          .title-card {
+            font-size: 60px;
+            color: $blue;
+            text-align: center;
+            p {
+              margin: 0;
+            }
+          }
+          .description-card {
+            text-align: center;
+            font-size: 18px;
+          }
+        }
+      }
+
+    }
+  }
+  .wrap-btn {
+    padding-top: 70px;
+    @include media-breakpoint-down(sm) {
+      padding-top: 25px;
+    }
   }
 }
 
