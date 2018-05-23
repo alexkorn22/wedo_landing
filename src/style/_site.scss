@@ -198,7 +198,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(md) {
               background-color: rgba(0,0,0,0.45);
               max-width: 100%;
             }
@@ -265,20 +265,17 @@
   .content-section {
     margin-top: 70px;
     margin-bottom: 80px;
+    @include media-breakpoint-down(sm){
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
 
     .tabs-im {
       position: relative;
       min-height: 0;
       transition: all 0.5s;
-      //margin: 50px 0;
-      @include media-breakpoint-down(md){
-        margin: 40px 0;
-      }
-
-      /* ---------------------- Tab */
 
       .tab-im {
-        //padding-right: 65px;
         @include media-breakpoint-up (md) {
           float: left;
           clear: left;
@@ -286,12 +283,15 @@
             margin-top: 85px;
           }
         }
+        @include media-breakpoint-up(sm){
+          &:nth-of-type(1){
+            margin-top: 0;
+          }
+        }
         @include media-breakpoint-down(sm) {
           padding-right: 0;
           padding-left: 0;
         }
-
-        /* ---------------------- Tab Toggle */
 
         .tab-toggle-im {
           position: relative;
@@ -307,13 +307,12 @@
           font-size: 16px;
           transition: all 0.3s;
           @include media-breakpoint-down(md) {
-            font-size: 14px;
+            font-size: 16px;
             margin: 5px 0;
           }
           &:hover {
             cursor: pointer;
           }
-
           &.active {
             color: $black;
             cursor: default;
@@ -330,14 +329,13 @@
           max-height: none;
           position: absolute;
           right: 0;
-          //top: 40%;
           opacity: 0;
-          //padding: 0rem 2rem 2rem 2rem;
           padding-bottom: 20px;
           transform: translateX(100%);
         }
         &.active {
           max-height: 1000px; // Enough to always clear longest content
+          //padding: 0;
           @include media-breakpoint-up (lg) {
             max-height: none;
             opacity: 1;
@@ -363,12 +361,6 @@
             color: $blue;
             font-family: $OpenSansSemibold;
             line-height: 35px;
-            @include media-breakpoint-down(sm) {
-              font-size: 14px;
-            }
-            @include media-breakpoint-down(md) {
-              font-size: 18px;
-            }
           }
           .description {
             font-size: 16px;
@@ -404,8 +396,34 @@
             border: 0;
             margin: 30px 0;
           }
+          @include media-breakpoint-down(sm){
+            padding: 0 !important;
+            box-shadow: none;
+            .description {
+              font-size: 13px;
+              line-height: 18px;
+              ul {
+                margin-bottom: 10px;
+                li{
+                  margin-bottom: 10px;
+                }
+              }
+              .link-download {
+                margin: 15px 0;
+                img {
+                  height: 15px;
+                }
+              }
+            }
+          }
+          @include media-breakpoint-down(md){
+            padding: 20px;
+            box-shadow: none;
+            .line-horizontal {
+              margin: 0 0 20px 0;
+            }
+          }
         }
-
       }
     }
   }
@@ -437,6 +455,9 @@
           &.font-bold {
             font-family: $OpenSansSemibold;
             font-size: 18px;
+            @include media-breakpoint-down(sm){
+              font-size: 14px;
+            }
           }
           .small-italic {
             font-style: italic;
@@ -450,61 +471,64 @@
           }
         }
       }
-
-      .button-tariff-kr {
-        margin-top: 40px;
-        text-align: center;
-        .btn-tariff {
-          background-color: transparent;
-          border: 2px solid $green;
-          padding: 7px 10px;
-          width: 120px;
-          color: $green;
-          font-family: $OpenSansRegular;
-          &:focus {
-            outline: none;
-          }
-          &_active {
-            background-color: $green;
-            color: $white;
-          }
-        }
-      }
-
       @include media-breakpoint-down(sm){
+        margin-top: 0;
         .custom-table {
           margin-top: 40px;
-          margin-bottom: 25px;
           .t-col1 {
             width: 50%;
-            font-size: 14px;
+            font-size: 13px;
             line-height: 18px;
-            &.title {
-              font-size: 20px;
-            }
-            .small-italic {
-              font-size: 12px;
-              line-height: 16px;
-            }
             img {
               margin-right: 10px;
               width: 20px;
             }
           }
-          .t-col2, .t-col3 {
+          .t-col2, .t-col3, .t-col4 {
             width: 50%;
-            font-size: 14px;
+            font-size: 13px;
             line-height: 18px;
             &.title {
-              font-size: 20px;
+              font-size: 16px;
+              line-height: 18px;
+            }
+            img {
+              width: 12px;
+            }
+            .wrap-btn {
+              height: 50px;
             }
           }
-          .t-col3 {
+          .t-col3, .t-col4 {
             display: none;
           }
         }
       }
 
+  }
+  .button-tariff-kr {
+    margin-top: 40px;
+    text-align: center;
+    .btn-tariff {
+      background-color: transparent;
+      border: 2px solid $blue;
+      border-radius: 3px;
+      padding: 7px 10px;
+      width: 100%;
+      color: $blue;
+      font-family: $OpenSansRegular;
+      font-size: 14px;
+      &-three {
+        margin-top: 15px;
+      }
+      &:focus {
+        outline: none;
+      }
+      &_active {
+        background-color: $blue;
+        color: $white;
+      }
+    }
   }
 }
 
@@ -632,6 +656,21 @@
       }
 
     }
+  }
+  .owl-dot {
+    background: $white;
+    height: 12px;
+    width: 12px;
+    border-radius: 10px;
+    border: 1px solid $blue;
+    margin: 0 3px;
+  }
+  .owl-dot.active {
+    background: $blue;
+    height: 12px;
+    width: 12px;
+    border-radius: 10px;
+    border: 1px solid $blue;
   }
   .wrap-btn {
     padding-top: 70px;
