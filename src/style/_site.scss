@@ -276,6 +276,7 @@
       transition: all 0.5s;
 
       .tab-im {
+
         @include media-breakpoint-up (md) {
           float: left;
           clear: left;
@@ -283,14 +284,18 @@
             margin-top: 85px;
           }
         }
-        @include media-breakpoint-up(sm){
+
+        @include media-breakpoint-down(sm) {
+          padding-right: 0;
+          padding-left: 0;
           &:nth-of-type(1){
             margin-top: 0;
           }
         }
-        @include media-breakpoint-down(sm) {
-          padding-right: 0;
-          padding-left: 0;
+        @include media-breakpoint-between(sm, md){
+          &:nth-of-type(1){
+            margin-top: 0;
+          }
         }
 
         .tab-toggle-im {

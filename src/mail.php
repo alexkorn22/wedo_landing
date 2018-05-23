@@ -456,4 +456,110 @@ if((isset($_POST['Username-com'])&&$_POST['Username-com']!="")&&(isset($_POST['p
     $tg->sendMessage($message);
 }
 
+if((isset($_POST['name-site'])&&$_POST['name-site']!="")&&(isset($_POST['phone-site'])&&$_POST['phone-site']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
+    $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $subject = 'WeDo Сайты. Консультация'; //Загаловок сообщения
+    $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name-site'].'</p>
+                        <p>Телефон: '.$_POST['phone-site'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+    $send = mail($to, $subject, $message, $headers);
+
+    $message = '<b>WeDo Сайты. Консультация </b>'. "\n";
+    $message .= '<b>Имя: </b>'.$_POST['name-site'] . "\n";
+    $message .= '<b>Телефон: </b>'.$_POST['phone-site'] . "\n";
+
+    require 'Telegram.php';
+    $tg = new Telegram();
+    $tg->sendMessage($message);
+}
+
+if((isset($_POST['name-site-tariff1'])&&$_POST['name-site-tariff1']!="")&&(isset($_POST['phone-site-tariff1'])&&$_POST['phone-site-tariff1']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
+    $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $subject = 'WeDo Сайты. Заказ тарифа'; //Загаловок сообщения
+    $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name-site-tariff1'].'</p>
+                        <p>Телефон: '.$_POST['phone-site-tariff1'].'</p>
+                        <p>Тариф: '.$_POST['site-tariff1'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+    $send = mail($to, $subject, $message, $headers);
+
+    $message = '<b>WeDo Сайты. Заказ тарифа </b>'. "\n";
+    $message .= '<b>Имя: </b>'.$_POST['name-site-tariff1'] . "\n";
+    $message .= '<b>Телефон: </b>'.$_POST['phone-site-tariff1'] . "\n";
+    $message .= '<b>Тариф: </b>'.$_POST['site-tariff1'] . "\n";
+
+    require 'Telegram.php';
+    $tg = new Telegram();
+    $tg->sendMessage($message);
+}
+
+if((isset($_POST['name-site-tariff2'])&&$_POST['name-site-tariff2']!="")&&(isset($_POST['phone-site-tariff2'])&&$_POST['phone-site-tariff2']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
+    $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $subject = 'WeDo Сайты. Заказ тарифа'; //Загаловок сообщения
+    $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name-site-tariff2'].'</p>
+                        <p>Телефон: '.$_POST['phone-site-tariff2'].'</p>
+                        <p>Тариф: '.$_POST['site-tariff2'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+    $send = mail($to, $subject, $message, $headers);
+
+    $message = '<b>WeDo Сайты. Заказ тарифа </b>'. "\n";
+    $message .= '<b>Имя: </b>'.$_POST['name-site-tariff2'] . "\n";
+    $message .= '<b>Телефон: </b>'.$_POST['phone-site-tariff2'] . "\n";
+    $message .= '<b>Тариф: </b>'.$_POST['site-tariff2'] . "\n";
+
+    require 'Telegram.php';
+    $tg = new Telegram();
+    $tg->sendMessage($message);
+}
+
+if((isset($_POST['name-site-tariff3'])&&$_POST['name-site-tariff3']!="")&&(isset($_POST['phone-site-tariff3'])&&$_POST['phone-site-tariff3']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
+    $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
+    $subject = 'WeDo Сайты. Заказ тарифа'; //Загаловок сообщения
+    $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['name-site-tariff3'].'</p>
+                        <p>Телефон: '.$_POST['phone-site-tariff3'].'</p>
+                        <p>Тариф: '.$_POST['site-tariff3'].'</p>
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+    $send = mail($to, $subject, $message, $headers);
+
+    $message = '<b>WeDo Сайты. Заказ тарифа </b>'. "\n";
+    $message .= '<b>Имя: </b>'.$_POST['name-site-tariff3'] . "\n";
+    $message .= '<b>Телефон: </b>'.$_POST['phone-site-tariff3'] . "\n";
+    $message .= '<b>Тариф: </b>'.$_POST['site-tariff3'] . "\n";
+
+    require 'Telegram.php';
+    $tg = new Telegram();
+    $tg->sendMessage($message);
+}
+
 ?>

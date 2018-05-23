@@ -886,6 +886,15 @@ footer {
       padding-top: 7px;
     }
   }
+  .wrap-tariff-name {
+    .tariff {
+      display: flex;
+      .name-tariff {
+        margin-left: 5px;
+        font-family: $OpenSansRegular;
+      }
+    }
+  }
 }
 
 .modal-kr, .modal-seo, .modal-smm {
@@ -936,6 +945,12 @@ footer {
           &:before,
           &:after {
             background: $green;
+          }
+          &_blue {
+            &:before,
+            &:after {
+              background: $blue;
+            }
           }
         }
       }
