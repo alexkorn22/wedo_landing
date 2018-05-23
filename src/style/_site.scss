@@ -8,11 +8,11 @@
 .head-site {
   height: 100vh;
   width: 100%;
-  background-image: url(../img/bg-head-site.png);
+  background-image: url(../img/bg-head-site-min.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  //background-attachment: fixed;
   position: relative;
 
   background-blend-mode: multiply;
@@ -81,12 +81,8 @@
     }
   }
 
-  @include media-breakpoint-down(md){
-    background-image: url(../img/bg-head-smm_mob.jpg);
-  }
   @include media-breakpoint-down(sm){
     margin-bottom: 90px;
-    background-image: url(../img/bg-head-smm_mob.jpg);
     .head-content {
       padding: 20px 15px 20px 15px;
     }
@@ -228,38 +224,8 @@
 .tabs-stages {
   .content-section {
     margin-top: 70px;
+    margin-bottom: 80px;
 
-    //button,
-    //.button {
-    //  position: relative;
-    //  display: inline-block;
-    //  color: $black;
-    //  background-color: transparent;
-    //  margin: 0 auto;
-    //  padding: 30px 0;
-    //  border: none;
-    //  width: 100%;
-    //  font-size: 18px;
-    //  text-align: center;
-    //  transition: all 0.3s;
-    //  @include media-breakpoint-down(md) {
-    //    font-size: 14px;
-    //    margin: 5px 0;
-    //    padding: 20px 0;
-    //  }
-    //  &:hover {
-    //    color: $blue;
-    //    cursor: pointer;
-    //    &:before,
-    //    &:after {
-    //      color: $blue;
-    //    }
-    //  }
-    //  &:after,
-    //  &:before {
-    //    transition: all 0.3s;
-    //  }
-    //}
     .tabs-im {
       position: relative;
       min-height: 0;
@@ -276,6 +242,9 @@
         @include media-breakpoint-up (md) {
           float: left;
           clear: left;
+          &:nth-of-type(1){
+            margin-top: 85px;
+          }
         }
         @include media-breakpoint-down(sm) {
           padding-right: 0;
@@ -401,3 +370,103 @@
     }
   }
 }
+
+.table-price-site {
+  .content-section {
+    margin-top: 70px;
+
+      .custom-table {
+        margin-top: 70px;
+        margin-bottom: 30px;
+        width: 100%;
+        border: 2px solid transparent;
+        thead th {
+          border-bottom: 3px solid $blue;
+        }
+        &.table-hover-custom tbody tr:hover {
+          background-color: rgba($blueDark,.025);
+        }
+
+        .t-col1, .t-col2, .t-col3, .t-col4 {
+          width: 25%;
+          &.title {
+            font-size: 18px;
+            line-height: 20px;
+            font-family: $OpenSansSemibold;
+            text-align: center;
+            vertical-align: middle;
+          }
+          &.font-bold {
+            font-family: $OpenSansSemibold;
+            font-size: 18px;
+          }
+          .small-italic {
+            font-style: italic;
+            font-size: 14px;
+          }
+        }
+        .t-col1 {
+          img {
+            margin-right: 10px;
+            width: 30px;
+          }
+        }
+      }
+
+      .button-tariff-kr {
+        margin-top: 40px;
+        text-align: center;
+        .btn-tariff {
+          background-color: transparent;
+          border: 2px solid $green;
+          padding: 7px 10px;
+          width: 120px;
+          color: $green;
+          font-family: $OpenSansRegular;
+          &:focus {
+            outline: none;
+          }
+          &_active {
+            background-color: $green;
+            color: $white;
+          }
+        }
+      }
+
+      @include media-breakpoint-down(sm){
+        .custom-table {
+          margin-top: 40px;
+          margin-bottom: 25px;
+          .t-col1 {
+            width: 50%;
+            font-size: 14px;
+            line-height: 18px;
+            &.title {
+              font-size: 20px;
+            }
+            .small-italic {
+              font-size: 12px;
+              line-height: 16px;
+            }
+            img {
+              margin-right: 10px;
+              width: 20px;
+            }
+          }
+          .t-col2, .t-col3 {
+            width: 50%;
+            font-size: 14px;
+            line-height: 18px;
+            &.title {
+              font-size: 20px;
+            }
+          }
+          .t-col3 {
+            display: none;
+          }
+        }
+      }
+
+  }
+}
+
