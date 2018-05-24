@@ -393,7 +393,7 @@ if((isset($_POST['name-order-consult-smm'])&&$_POST['name-order-consult-smm']!="
     $tg->sendMessage($message);
 
 }
-
+//ИМ
 if((isset($_POST['name-free-consult-im'])&&$_POST['name-free-consult-im']!="")&&(isset($_POST['phone-free-consult-im'])&&$_POST['phone-free-consult-im']!="")) {//Проверка отправилось ли наше поля name и не пустые ли они
     $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
     $subject = 'WeDo Интернет магазины обратный звонок'; //Загаловок сообщения
@@ -455,7 +455,8 @@ if((isset($_POST['Username-com'])&&$_POST['Username-com']!="")&&(isset($_POST['p
     $tg = new Telegram();
     $tg->sendMessage($message);
 }
-
+//ИМ--
+//стр Сайты
 if((isset($_POST['name-site'])&&$_POST['name-site']!="")&&(isset($_POST['phone-site'])&&$_POST['phone-site']!="")){//Проверка отправилось ли наше поля name и не пустые ли они
     $to = 'info@artorg.com.ua'; //Почта получателя, через запятую можно указать сколько угодно адресов
     $subject = 'WeDo Сайты. Консультация'; //Загаловок сообщения
@@ -561,5 +562,6 @@ if((isset($_POST['name-site-tariff3'])&&$_POST['name-site-tariff3']!="")&&(isset
     $tg = new Telegram();
     $tg->sendMessage($message);
 }
+//стр Сайты --
 
 ?>
