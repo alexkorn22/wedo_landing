@@ -36,18 +36,24 @@ $( document ).ready(function() {
     });
 
 //таблица тарифов в контекстной рекламе
-    function changeTable(col1, col2, one, two) {
-        $(".custom-table " + col1).css("display","none");
-        $(".custom-table "+ col2).css("display","table-cell");
-        $(".btn-tariff.btn-tariff-"+one).addClass("btn-tariff_active");
-        $(".btn-tariff.btn-tariff-"+two).removeClass("btn-tariff_active");
+    $(".btn-tariff").click(function () {
+        var classname = $(this).attr('class').substr(0,1);
+        changeTableSec(classname)
+    });
+
+    function changeTableSec(clicked) {
+        $('[class ^= t-col]').each(function (index, elem) {
+            if(index > 0) {$(this).css("display","none");}
+        });
+        $(".btn-tariff").each(function (index, elem) {
+            $(this).removeClass("btn-tariff_active");
+        });
+
+        $(".btn-tariff."+ clicked).addClass("btn-tariff_active");
+        $(".custom-table .t-col" + clicked).css("display","table-cell");
+        $(".custom-table .t-col1").css("display","table-cell");
     }
-    $(".btn-tariff.btn-tariff-one").click(function () {
-        changeTable('.t-col3', '.t-col2', 'one', 'two')
-    });
-    $(".btn-tariff.btn-tariff-two").click(function () {
-        changeTable('.t-col2', '.t-col3', 'two', 'one')
-    });
+
 
 //слайдер работ в контекстной рекламе
     $('.slider-work').owlCarousel({
@@ -235,6 +241,33 @@ $( document ).ready(function() {
         }
     });
 
+//слайдер работ на стр Сайты
+    $('.slider-work-site').owlCarousel({
+        loop:true, //Зацикливаем слайдер
+        margin:50, //Отступ от картино если выводите больше 1
+        autoplay:true, //Автозапуск слайдера
+        smartSpeed:2000, //Время движения слайда
+        autoplayTimeout:7000, //Время смены слайда
+        dots: false,
+        nav: true,
+        navText: ["<img src='../img/Arrows-Back-icon.png'>","<img src='../img/Arrows-Back-icon.png'>"],
+        responsive:{ //Адаптация в зависимости от разрешения экрана
+            0:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            600:{
+                items:1,
+                dots: true,
+                nav: false
+            },
+            1000:{
+                items:1
+            }
+        }
+    });
+
 //селектрик. вроде кастомный
     $(function() {
         $('select').selectric();
@@ -309,7 +342,7 @@ $( document ).ready(function() {
 //Аякс отправка форм
 //Документация: http://api.jquery.com/jquery.ajax/
 // var formArr = ['order-kr-form','callback-form-kr','discover-form', 'freecalc-kr-form', 'callback-form'];
-    var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr','modal-free-cosult-kr', 'modal-freecalc-kr', 'myModal', 'modal-free-audit-seo', 'modal-order-promotion-seo1', 'modal-order-promotion-seo2', 'modal-order-consultation-seo', 'modal-discover-smm', 'modal-same-smm', 'modal-order-consultation-smm','free-consult-im', 'commercial-im'];
+    var formArrModal = ['modal-callback-kr','modal-discover-kr','modal-order-kr','modal-free-cosult-kr', 'modal-freecalc-kr', 'myModal', 'modal-free-audit-seo', 'modal-order-promotion-seo1', 'modal-order-promotion-seo2', 'modal-order-consultation-seo', 'modal-discover-smm', 'modal-same-smm', 'modal-order-consultation-smm','free-consult-im', 'commercial-im', 'modal-free-consult-site', 'modal-site-tariff1', 'modal-site-tariff2', 'modal-site-tariff3'];
     formArrModal.forEach(function (elem) {
         var singleFotm = $('#'+ elem).find('form');
         var _modal =  $('#'+ elem);
